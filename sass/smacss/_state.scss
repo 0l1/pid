@@ -1,0 +1,38 @@
+/******************/
+/*   Displaying   */
+/******************/
+
+.is-inlineblock {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/*****************/
+/*   Animation   */
+/*****************/
+
+.is-transparent {
+  opacity: 0;
+}
+
+.is-fading-in {
+  opacity: 1;
+  @include transition (opacity 0.5s ease-in);
+}
+
+.is-fading-out {
+  opacity: 0;
+  @include transition (opacity 0.5s ease-in);
+}
+
+/*****************/
+/*    Floating   */
+/*****************/
+
+.is-cleared {
+  clear: both;
+}
+
+.is-right {
+  float: right;
+}

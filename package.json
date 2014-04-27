@@ -1,0 +1,22 @@
+{
+  "name": "PID",
+  "version": "1.0.0",
+  "description": "Grunt Tasks for PID blog",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "^0.4.4",
+    "grunt-contrib-compass": "^0.7.2",
+    "grunt-contrib-watch": "^0.6.1"
+  },
+  "devDependencies": {
+    "grunt-contrib-compass": "^0.7.2"
+  },
+  "keywords": [
+    "Grunt",
+    "Sass",
+    "Compass",
+    "Watch"
+  ],
+  "author": "0l1",
+  "license": "ISC"
+}

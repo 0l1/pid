@@ -1,0 +1,21 @@
+.l-wrap {
+  width: em(980,16);
+  margin: 0 auto;
+  @include row();
+}
+
+.l-main {
+  @include row();
+}
+
+.l-content {
+  @include row();
+  float: left;
+  width: em(735,16);
+}
+
+.l-sidebar {
+  float: left;
+  width: em(240,16);
+  margin: 0 0 0 em(5,16);
+}

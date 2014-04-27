@@ -1,0 +1,79 @@
+/***************/
+/*     Logo    */
+/***************/
+.m-logo {
+  font-size: em(16);
+  margin: em(20) auto;
+}
+
+.m-logo a {
+  display: block;
+  margin: 0 auto;
+  @include icons-sprite(logo);
+  width: icons-sprite-width(logo);
+  height: icons-sprite-height(logo);
+  overflow: hidden;
+  text-indent: - em(9999,16);
+}
+
+/****************/
+/*    Main Nav  */
+/****************/
+
+.m-mainnav {
+  position: relative;
+  text-align: center;
+}
+
+.m-mainnav .level-0 {
+  position: relative;
+}
+
+.m-mainnav .sub-menu {
+  @include position(absolute, 100% 0 0 0%);
+  z-index: 5;
+}
+
+.m-mainnav .textwidget {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+/****************/
+/*    Slider    */
+/****************/
+
+.m-slider {
+  max-height: em(375,16);
+}
+
+.m-slider .swiper-slide {
+  position: relative;
+}
+
+.m-slider h1 {
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  margin: 0;
+}
+
+.m-postlist .post {
+  $width: 100%;
+  width: $width / 3;
+  float: left;
+  // @include row();
+}
+
+/***************/
+/*  Post List  */
+/***************/
+
+.m-postlist .box {
+  max-width: em(230,16);
+}
+
+.m-postlist .second {
+  margin: 0 auto;
+}
