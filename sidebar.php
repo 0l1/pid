@@ -1,4 +1,4 @@
 <aside class="l-sidebar">
-  <?php dynamic_sidebar('Sidebar'); ?>
-  <?php get_search_form(); ?>
+  <?php dynamic_sidebar('About'); ?>
+  <?php dynamic_sidebar('Objet du jour'); ?>
 </aside>

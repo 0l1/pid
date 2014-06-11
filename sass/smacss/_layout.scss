@@ -1,21 +1,27 @@
 .l-wrap {
-  width: em(980,16);
-  margin: 0 auto;
-  @include row();
+  	width: em(980,16);
+  	margin: 0 auto;
+ 	@include clearfix;
+}
+
+.l-header {
+	position: relative;
+  	@include clearfix;
+  	margin-bottom: em(30,16);
 }
 
 .l-main {
-  @include row();
+	@include clearfix;
 }
 
 .l-content {
-  @include row();
-  float: left;
-  width: em(735,16);
+  	@include clearfix;
+  	float: left;
+  	width: em(725,16);
 }
 
 .l-sidebar {
-  float: left;
-  width: em(240,16);
-  margin: 0 0 0 em(5,16);
+	float: left;
+  	width: em(240,16);
+  	margin-left: em(15,16);
 }

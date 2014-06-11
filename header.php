@@ -7,9 +7,9 @@
   </head>
   <body>
     <div class="l-wrap">
-      <header class="l-head">
-        <h1 class="m-logo"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
-        <nav class="m-mainnav" role="navigation">
+      <header class="l-header">
+        <h1 class="m-logo is-left"><a class="is-left" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+        <nav class="m-mainnav is-right" role="navigation">
           <?php
           wp_nav_menu( array('menu_class' => 'menu',
                                     'container' => '',
@@ -18,6 +18,6 @@
                                     'items_wrap' => '<ul>%3$s</ul>',
                                     'walker'=> new Customed_Walker_Nav_Menu()
                                     ) );?>
-          <?php dynamic_sidebar('Nav'); ?>
         </nav>
+      <div class="m-sep"></div>
       </header>

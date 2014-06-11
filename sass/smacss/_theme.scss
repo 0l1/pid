@@ -1,0 +1,136 @@
+body {
+  @include background(url("../img/background.png") left bottom repeat-x,linear-gradient($white, $pastelpink) left bottom repeat-x);
+  @extend %Times;
+}
+
+a {
+	color: $darkgrey;
+	@include transition(color 0.25s ease-in);
+}
+
+a:hover,
+a:focus {
+	color: $pinklink;
+}
+
+.m-postlist img,
+.m-slider img,
+.attachment-singlepage-banner {
+	border: 10px solid transparent;
+}
+
+.m-postlist .yellow,
+.m-slider .yellow,
+.attachment-singlepage-banner.yellow{
+	border: 10px solid  $yellowborder;
+}
+
+.m-postlist .green,
+.m-slider .green,
+.attachment-singlepage-banner.green {
+	border: 10px solid  $greenborder;
+}
+
+.m-postlist .pink,
+.m-slider .pink,
+.attachment-singlepage-banner.pink {
+	border: 10px solid  $pinkborder;
+}
+
+.m-postlist .grey, 
+.m-slider .grey,
+.attachment-singlepage-banner.grey {
+	border: 10px solid  $greyborder;
+}
+
+/*********************/
+/*    Single Post    */
+/*********************/
+
+.t-singlelink {
+	text-decoration: underline;
+	font-style: italic;
+	color: $darkgrey;
+}
+
+.t-singlelink:hover,
+.t-singlelink:focus {
+	color: $pinklink;
+}
+
+.t-bulletsep {
+	color: $darkgrey;
+	padding: 0 em(15,16);
+}
+
+/**************/
+/*    Forms   */
+/**************/
+
+input[type="text"], input[type="password"], 
+input[type="datetime"]:focus, input[type="datetime-local"], 
+input[type="date"], input[type="month"], 
+input[type="time"], input[type="week"], 
+input[type="number"], input[type="email"], 
+input[type="url"], input[type="search"], 
+input[type="tel"], input[type="color"],
+textarea  {
+	font-size: 14px;
+	line-height: 25px;
+	font-style: italic;
+	color: $pinklink;
+	border: 1px solid $pinklink;
+	padding: 0 10px;
+	outline: none;
+	@include transition (all 0.25s ease-in);
+	@include placeholder {
+	  font-style: italic;
+	  color: $pinklink;
+	}
+}
+
+input[type="text"], input[type="password"], 
+input[type="datetime"]:focus, input[type="datetime-local"], 
+input[type="date"], input[type="month"], 
+input[type="time"], input[type="week"], 
+input[type="number"], input[type="email"], 
+input[type="url"], input[type="search"], 
+input[type="tel"], input[type="color"] {
+	width: 250px;
+	margin: 0 0 10px;
+}
+
+textarea {
+	width: 100%;
+	max-width: 100%;
+	height: 190px;
+	margin: 0;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, 
+input[type="datetime"]:focus, input[type="datetime-local"]:focus, 
+input[type="date"]:focus, input[type="month"]:focus, 
+input[type="time"]:focus, input[type="week"]:focus, 
+input[type="number"]:focus, input[type="email"]:focus, 
+input[type="url"]:focus, input[type="search"]:focus, 
+input[type="tel"]:focus, input[type="color"]:focus,
+textarea:focus {
+    box-shadow: 0 0 5px $pinklink;
+}
+
+input[type="submit"] {
+	border: none;
+	@extend %Jennasue;
+	font-size: em(32,16);
+	line-height: em(32,32);
+	padding: 0 em(32,32);
+	border-radius: em(6,32);
+	color: $white;
+	background: $pinklink;
+	@include transition (all 0.25s ease-in);
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+	background: $darkgrey;
+}

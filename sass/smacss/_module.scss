@@ -1,14 +1,14 @@
 /***************/
 /*     Logo    */
 /***************/
+
 .m-logo {
   font-size: em(16);
-  margin: em(20) auto;
+  margin: em(25,16) 0;
 }
 
 .m-logo a {
   display: block;
-  margin: 0 auto;
   @include icons-sprite(logo);
   width: icons-sprite-width(logo);
   height: icons-sprite-height(logo);
@@ -16,28 +16,203 @@
   text-indent: - em(9999,16);
 }
 
-/****************/
-/*    Main Nav  */
-/****************/
+/***************/
+/*   Main Nav  */
+/***************/
 
 .m-mainnav {
   position: relative;
   text-align: center;
+  margin-top: em(67,16);
+}
+
+.m-mainnav .level-0,
+.m-mainnav .sep {
+  display: block;
+  position: relative;
+  font-size: em(18,16);
+  line-height: em(18,18);
+  color: $grey;
 }
 
 .m-mainnav .level-0 {
-  position: relative;
+  width: em(95,18);
+}
+
+.m-mainnav .sep {
+	padding: 0 em(5,18);
+}
+
+.m-mainnav .sep:first-child,
+.m-mainnav .level-0 .sep {
+  display: none;
+}
+
+.m-mainnav .level-0:last-child {
+	margin-left: em(15,18);
+}
+
+.m-mainnav .level-0 a {
+  color: $grey;
+  &:hover,
+  &:focus {
+	  font-weight: bold;
+	  font-style: italic;
+  }
+}
+
+.m-mainnav .level-1 {
+  display: block;
+  float: none;
 }
 
 .m-mainnav .sub-menu {
-  @include position(absolute, 100% 0 0 0%);
+  @include position(absolute, 100% 0 0 50%);
+  width: em(300,16);
+  margin-left: - em(300,16)/2;
+  @include pad(em(10,16) 0);
   z-index: 5;
 }
 
-.m-mainnav .textwidget {
+.m-sep {
+  display: block;
   position: absolute;
-  right: 0;
+  left: 0;
   bottom: 0;
+  width: 100%;
+  height: 0%;
+  border-top: em(1,16) dotted $golden;
+}
+
+/************/
+/*  Footer  */
+/************/
+
+.m-copyright {
+	font-size: em(13,16);
+	margin: em(25,13) auto em(10,13);
+	color: $darkgrey;
+}
+
+.m-copyright a {
+	text-decoration: underline;
+}
+
+.m-copyright a:hover,
+.m-copyright a:focus {
+	color: $pinklink;
+}
+
+/***************/
+/*    About    */
+/***************/
+
+.m-about {
+	position: relative;
+	padding-top: em(40,16);
+}
+
+/***************/
+/*    Social    */
+/***************/
+
+$social: (facebook, pinterest, instagram);
+@each $network in $social {
+  .#{$network} {
+	  @include icons-sprite(#{$network});
+	  width: icons-sprite-width(#{$network});
+	  height: icons-sprite-height(#{$network});
+  }
+}
+
+//@include keyframes(Spining) {
+//  0% {
+//	  @include transform(rotate(0deg));
+//  }
+//  100% {
+//      @include transform(rotate(360deg));
+//  }
+//}
+
+.m-social {
+	position: absolute;
+	z-index: 5;
+	width: em(240,16);
+	height: em(240,16);
+	top: em(40,16);
+	left: 0;
+	//@include animation(Spining 10s linear infinite);
+}
+
+.facebook,
+.pinterest, 
+.instagram {
+	position: absolute;
+	display:block;
+	overflow: hidden;
+	text-indent: - em(9999,16);
+}
+
+.facebook {
+	top: - em(40,16);
+	left: 50%;
+	margin-left: - icons-sprite-width(facebook) / 2;
+}
+
+.pinterest {
+	top: - em(28,16);
+	right: em(45,16);
+}
+
+.instagram {
+	top: 0;
+	right: 0;
+}
+
+/***********************/
+/*    Objet du jour    */
+/***********************/
+
+.m-daily-object {
+	position: relative;
+}
+
+.m-daily-title {
+	@extend %Jennasue;
+	font-size: em(32,16);
+	margin: 0;
+	position: absolute;
+	top: em(35,32);
+	left: em(10,32);
+	width: em(220,32);
+	text-align: center;
+	
+}
+
+.m-daily-object img {
+	border: 10px solid $flashypink;
+}
+
+
+/*********************/
+/*    Breadcrumbs    */
+/*********************/
+
+.m-breadcrumbs {
+	margin-bottom: em(15,16);
+}
+
+.m-breadcrumbs li,
+.m-breadcrumbs a {
+	display: inline;
+	color: $darkgrey;
+	font-style: italic;
+}
+
+.m-breadcrumbs a:hover,
+.m-breadcrumbs a:focus,
+.m-breadcrumbs span {
+	text-decoration: underline;
 }
 
 /****************/
@@ -53,27 +228,280 @@
 }
 
 .m-slider h1 {
-  position: absolute;
-  top: 35px;
-  left: 35px;
-  margin: 0;
+  	@include position(absolute, em(35,32) 0 0 em(35,32));
+  	font-size: em(36,16);
+	font-style: italic;
+	font-weight: lighter;
+  	text-transform: capitalize;
+  	max-width: em(150,36);
+  	margin: 0;
 }
 
-.m-postlist .post {
-  $width: 100%;
-  width: $width / 3;
-  float: left;
-  // @include row();
+.m-slider h1 a {
+  color: $white;
+}
+
+.m-slider .pagination {
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	left:0;
+	bottom:em(20,16);
+	z-index:2;
+}
+
+.m-slider .swiper-pagination-switch {
+    display: inline-block;
+    @include icons-sprite(sliderpager);
+    width: icons-sprite-width(sliderpager);
+    height: icons-sprite-height(sliderpager);
+    overflow: hidden;
+    text-indent: - em(9999,16);
+	margin: 0 em(7,16);
+	cursor: pointer;
+}
+
+@include keyframes(FadeIn) {
+  0% {
+    opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+.m-slider .swiper-active-switch {
+    @include icons-sprite(sliderpager_hover);
+	@include animation(FadeIn 1.0s ease-in);
 }
 
 /***************/
 /*  Post List  */
 /***************/
 
+.m-postlist {
+  overflow: hidden;
+  margin-top: em(15,16);
+  clear: both;
+}
+
+.m-postlist .post {
+  $width: 100%;
+  width: $width / 3;
+  float: left;
+  margin-bottom: em(15,16);
+}
+
 .m-postlist .box {
+  position: relative;
   max-width: em(230,16);
 }
 
 .m-postlist .second {
   margin: 0 auto;
+}
+
+.m-postlist .post-infos {
+  	@include position(absolute, em(30,16) 0 0 em(20,16));
+  	background: rgba(255, 255, 255, 0.8);
+  	width: em(190,16);
+	height: em(170,16);
+	padding: em(10,16);
+  	text-align: center;
+}
+
+.m-postlist .post-title {
+    font-size: em(20,16);
+	line-height: em(20,20);
+    font-style: italic;
+	margin: 0;
+}
+
+.m-postlist .post-title a {
+	color: $darkgrey;
+}
+
+.m-postlist .post-infos .sep {
+	width: em(45,16);
+	height: em(1,16);
+	margin: em(10,16) auto;
+	background: $darkgrey;
+}
+
+.m-postlist .post-desc {
+    font-size: em(13,16);
+	line-height: em(18,13);
+	color: $darkgrey;
+}
+
+.m-postlist .post-more {
+	display: block;
+	width: em(45,32);
+	height: em(45,32);
+	border-radius: em(22,32);
+	@extend %Jennasue;
+	font-size: em(32,16);
+	line-height: em(55,32);
+	color: $white;
+	background: $mustard;
+	margin: em(10,32) auto 0;
+}
+
+/*****************/
+/*  Single Post  */
+/*****************/
+
+.attachment-singlepage-banner {
+	display: block;
+	margin: 0 auto;
+}
+
+.m-singlepost-title {
+	color: $darkgrey;
+	font-size: em(32,16);
+	text-align: center;
+	font-style: italic;
+	margin: em(25,32) auto em(20,32);
+}
+
+.m-singlepost-content {
+	color: $darkgrey;
+}
+
+.m-singlepost-content img {
+	display: block;
+	margin: 0 auto em(20,16);
+}
+
+.m-singlepost-content p {
+	font-size: em(14,16);
+	margin-bottom: em(20,14);
+}
+
+.m-singlepost-content a {
+	color: $pinklink;
+}
+
+.m-singlepost-content a:hover,
+.m-singlepost-content a:focus {
+	color: $darkgrey;
+}
+
+.m-singlepost-comments {
+	margin: em(35,16) 0 0;
+	color: $darkgrey;
+}
+
+.m-singlepost-comments h3 {
+	font-size: em(20,16);
+	margin: 0;
+}
+
+.m-singlepost-comments h3 a {
+	color: $pinklink;
+}
+
+#cancel-comment-reply-link {
+	color: $darkgrey;
+	text-decoration: underline;
+	font-style: italic;
+}
+
+.comment-notes {
+	font-size: em(14,16);
+	margin: em(10,14) 0;	
+}
+
+.m-singlepost-comments .form-submit {
+	@include row();
+	margin: em(10,16) auto em(20,16);
+}
+
+.m-singlepost-comments input[type="submit"] {
+	float: right;
+}
+
+.m-comments-number {
+	font-size:em(18,16);
+	margin-bottom: em(25,18);
+}
+
+.m-singlepost-comments .comment {
+	margin-top: em(10,16);
+	padding: em(10,16) 0 0 em(70,16);
+	border-top: 1px dotted $pinklink;
+}
+
+.m-singlepost-comments .depth-1 {
+	padding: 0 0 em(30,16);
+	margin: 0 0 em(30,16);
+	border-top: none;
+	border-bottom: 1px solid $pinklink;
+}
+
+.m-singlepost-comments .depth-2 {
+	padding: em(10,16) 0 0 em(30,16);
+}
+
+.m-singlepost-comments .depth-2 {
+	padding: em(10,16) 0 0 em(40,16);
+}
+
+.m-singlepost-comments .depth-3 {
+	padding: em(10,16) 0 0 em(50,16);
+}
+
+.m-singlepost-comments .depth-4 {
+	padding: em(10,16) 0 0 em(60,16);
+}
+
+.m-comments-list .comment-author {
+	font-size: em(18,16);
+	color: $pinklink;
+}
+
+.m-comments-list .comment-author:before {
+	content:"•";
+}
+
+.m-comments-list .comment-author a {
+	color: $pinklink;
+	text-decoration: underline;
+}
+
+.m-comments-list .comment-author a:hover,
+.m-comments-list .comment-author a:focus {
+	color: $darkgrey;
+}
+
+.m-comments-list .comment-meta a {
+	font-size: em(14,16);
+	font-style: italic;
+	color: $darkgrey;
+}
+
+.m-comments-list .comment-body p {
+	font-size: em(14,16);	
+	margin: em(15,14) auto;
+}
+
+.m-comments-list .comment-body p a {
+	color: $pinklink;
+	text-decoration: underline;
+}
+
+.m-comments-list .comment-body p a:hover,
+.m-comments-list .comment-body p a:focus {
+	color: $darkgrey;
+}
+
+.m-comments-list .reply a {
+	text-decoration: underline;
+	font-style: italic;
+	color: $pinklink;
+}
+
+.m-comments-list .reply a:hover,
+.m-comments-list .reply a:focus {
+	color: $darkgrey;
 }

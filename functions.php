@@ -1,35 +1,109 @@
 <?php
 //Activation Thumbnails
 add_theme_support( 'post-thumbnails' );
-add_image_size( 'sliderthumb',735,375,true);
-add_image_size( 'mosaicthumb',230,230,true);
-if (class_exists('MultiPostThumbnails')) {
-    new MultiPostThumbnails(
-        array(
-            'label' => 'Slider Image',
-            'id' => 'slider-image',
-            'post_type' => 'post',
-        )
-    );
+add_image_size( 'sliderthumb', 725, 375, true);
+add_image_size( 'mosaicthumb', 230, 230, true);
+add_image_size( 'singlepage-banner', 725, 235, true);
+// if (class_exists('MultiPostThumbnails')) {
+//     new MultiPostThumbnails(
+//         array(
+//             'label' => 'Slider Image',
+//             'id' => 'slider-image',
+//             'post_type' => 'post',
+//         )
+//     );
+// }
+
+function catch_that_image() {
+  global $post, $posts;
+  $first_img = '';
+  ob_start();
+  ob_end_clean();
+  $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+  $first_img = $matches[1][0];
+
+  if(empty($first_img)) {
+    $first_img = "/path/to/default.png";
+  }
+  return $first_img;
+}
+
+function set_featured_image_on_save($post_id){
+    $attachments = get_posts(array('numberposts' => '1', 'post_parent' => $post_id, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC'));
+    if(sizeof($attachments) > 0){
+        set_post_thumbnail($post_id, $attachments[0]->ID);
+    }else{
+        // not loaded the we upload it as an attachment
+        // required libraries for media_sideload_image
+        require_once(ABSPATH . 'wp-admin/includes/file.php');
+        require_once(ABSPATH . 'wp-admin/includes/media.php');
+        require_once(ABSPATH . 'wp-admin/includes/image.php');
+
+        // load the image
+        $img  = catch_that_image();
+        if ("/images/default.jpg" != $img){
+            $result = media_sideload_image($img, $post_id);
+            $attachments = get_posts(array('numberposts' => '1', 'post_parent' => $post_id, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC'));
+            if(sizeof($attachments) > 0)
+                set_post_thumbnail($post_id, $attachments[0]->ID);
+        }else{
+            //no images found
+            return;
+        }
+    }
+}
+
+
+
+add_action( 'save_post', 'auto_set_post_image' );
+
+/**
+ * runs on post save and check's if we already have a post thumbnail, if not it gets one
+ * 
+ * @param  (int) $post_id 
+ * @return Void
+ */
+function auto_set_post_image( $post_id ) {
+    // verify if this is an auto save routine. 
+      // If it is our form has not been submitted, so we dont want to do anything
+      if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
+          return;
+
+    // Check permissions
+    if ( 'page' == $_POST['post_type'] ){
+        if ( !current_user_can( 'edit_page', $post_id ) )
+        return;
+    }else{
+        if ( !current_user_can( 'edit_post', $post_id ) )
+            return;
+    }
+
+    // OK, we're authenticated: we need to find and save the data
+
+    //check if we have a post thumnail set already
+    $attch = get_post_meta($post_id,"_thumbnail_id",true);
+    if (empty($attch)){
+        set_featured_image_on_save($post_id);
+    }
 }
 
 // Activation widget Sidebar
 if ( function_exists('register_sidebar') ){
 	register_sidebar(array(
-		'name'=> 'Sidebar',
-		'id' => 'sidebar',
+		'name'=> 'About',
+		'id' => 'about',
 		'before_widget' => '',
 		'after_widget' => '',
 		'before_title' => '',
 		'after_title' => ''
 	));
 	register_sidebar(array(
-		'name'=> 'Nav',
-		'id' => 'nav',
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '',
-		'after_title' => ''
+		'name'=> 'Objet du jour',
+		'id' => 'dailyobject',
+		'before_widget' => '<section class="m-daily-object">',
+		'after_widget' => '</section>',
+		'before_title' => '<h2 class="m-daily-title">',
+		'after_title' => '</h2>'
 	));
 }
 
@@ -62,12 +136,12 @@ class Customed_Walker_Nav_Menu extends Walker_Nav_Menu {
 		$classes[] = 'menu-item-' . $item->ID;
 
 		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
-		$class_names = ' class="level-'. esc_attr( $depth ) .' is-inlineblock"';
+		$class_names = ' class="level-'. esc_attr( $depth ) .' is-left"';
 
 		$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
 		$id = strlen( $id ) ? ' id="' . esc_attr( $id ) . '"' : '';
 
-		$output .= $indent . '<li' . $value . $class_names .'>';
+		$output .= $indent . '<li class="sep is-left"> • </li><li' . $value . $class_names .'>';
 
 		$attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
 		$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
@@ -89,13 +163,57 @@ class Customed_Walker_Nav_Menu extends Walker_Nav_Menu {
 	}
 }
 
+//Breadcrumb
+function the_breadcrumb() {
+    global $post;
+    echo '<nav role="navigation" class="is-left">';
+	echo '<ul class="m-breadcrumbs">';
+    if (!is_home()) {
+        echo '<li><a href="';
+        echo get_option('home');
+        echo '">';
+        echo 'Home';
+        echo '</a></li><li> > </li>';
+        if (is_category() || is_single()) {
+            echo '<li>';
+            the_category(' </li><li> > </li><li> ');
+            if (is_single()) {
+                echo '</li><li> > </li><li><span>';
+                the_title();
+                echo '</span></li>';
+            }
+        } elseif (is_page()) {
+            if($post->post_parent){
+                $anc = get_post_ancestors( $post->ID );
+                $title = get_the_title();
+                foreach ( $anc as $ancestor ) {
+                    $output = '<li><a href="'.get_permalink($ancestor).'" title="'.get_the_title($ancestor).'">'.get_the_title($ancestor).'</a></li> <li> > </li>';
+                }
+                echo $output;
+                echo '<strong title="'.$title.'"> '.$title.'</strong>';
+            } else {
+                echo '<li><strong> '.get_the_title().'</strong></li>';
+            }
+        }
+    }
+    elseif (is_tag()) {single_tag_title();}
+    elseif (is_day()) {echo"<li>Archive for "; the_time('F jS, Y'); echo'</li>';}
+    elseif (is_month()) {echo"<li>Archive for "; the_time('F, Y'); echo'</li>';}
+    elseif (is_year()) {echo"<li>Archive for "; the_time('Y'); echo'</li>';}
+    elseif (is_author()) {echo"<li>Author Archive"; echo'</li>';}
+    elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {echo "<li>Blog Archives"; echo'</li>';}
+    elseif (is_search()) {echo"<li>Search Results"; echo'</li>';}
+    echo '</ul>';
+	echo '</nav>';
+}
+
 // Limiter longueur de l'excerpt
 function get_excerpt($count){
   $permalink = get_permalink($post->ID);
   $excerpt = get_the_content();
   $excerpt = strip_tags($excerpt);
   $excerpt = substr($excerpt, 0, $count);
-  $excerpt = $excerpt.'... <a href="'.$permalink.'">more</a>';
+  $excerpt = $excerpt.'...';
   return $excerpt;
 }
 
@@ -104,8 +222,8 @@ function scripts() {
 	wp_deregister_script('jquery');
 	wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js", null, '1.11.0', true);
 	wp_enqueue_script('jquery');
-	wp_register_script( 'swiper', get_template_directory_uri() . '/js/idangerous.swiper.min.js', null,'2.5.1', true);
-	wp_enqueue_script( 'swiper');
+	wp_register_script( 'slider', get_template_directory_uri() . '/js/idangerous.swiper.min.js', null,'2.5.1', true);
+	wp_enqueue_script( 'slider');
 	wp_register_script( 'function', get_template_directory_uri() . '/js/function.js', null, '1.0.0', true);
 	wp_enqueue_script( 'function');
 }
@@ -113,7 +231,7 @@ function scripts() {
 //Enregistrement des styles
 function styles() {
 	wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css', null, '1.0.0' );
-	wp_enqueue_style( 'swiper', get_template_directory_uri() . '/js/idangerous.swiper.css', null, '1.0.0' );
+	wp_enqueue_style( 'slider', get_template_directory_uri() . '/js/idangerous.swiper.css', null, '2.5.1' );
 }
 
 // Appel des scripts et des styles

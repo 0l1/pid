@@ -1,8 +1,9 @@
-@import "config/_sprites";
-@import "config/_fonts";
 @import "lib/bourbon/bourbon";
 @import "lib/neat/neat";
 @import "config/_normalize";
+@import "config/_colors";
+@import "config/_sprites";
+@import "config/_fonts";
 @import "smacss/_base";
 @import "smacss/_layout";
 @import "smacss/_module";

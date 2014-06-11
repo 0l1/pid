@@ -1,3 +1,13 @@
 /******************/
 /* Sprites Config */
 /******************/
+
+@include font-face(JennaSue, '../fonts/jennasue-webfont');
+
+%Times {
+	font-family: "Times New Roman", Times, serif;
+}
+
+%Jennasue {
+	font-family: "JennaSue", Helvetica, sans-serif;
+}
