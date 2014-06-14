@@ -1025,6 +1025,11 @@ h4, h5, h6 {
 }
 
 /* line 359, ../sass/smacss/_module.scss */
+.m-singlepost {
+  clear: both;
+}
+
+/* line 363, ../sass/smacss/_module.scss */
 .m-singlepost-title {
   color: #7d7d7d;
   font-size: 2em;
@@ -1033,65 +1038,96 @@ h4, h5, h6 {
   margin: 0.78125em auto 0.625em;
 }
 
-/* line 367, ../sass/smacss/_module.scss */
+/* line 371, ../sass/smacss/_module.scss */
 .m-singlepost-content {
   color: #7d7d7d;
 }
 
-/* line 371, ../sass/smacss/_module.scss */
+/* line 375, ../sass/smacss/_module.scss */
 .m-singlepost-content img {
   display: block;
   margin: 0 auto 1.25em;
 }
 
-/* line 376, ../sass/smacss/_module.scss */
+/* line 380, ../sass/smacss/_module.scss */
 .m-singlepost-content p {
   font-size: 0.875em;
   margin-bottom: 1.42857em;
 }
 
-/* line 381, ../sass/smacss/_module.scss */
+/* line 385, ../sass/smacss/_module.scss */
 .m-singlepost-content a {
   color: #de99ab;
 }
 
-/* line 386, ../sass/smacss/_module.scss */
+/* line 390, ../sass/smacss/_module.scss */
 .m-singlepost-content a:hover,
 .m-singlepost-content a:focus {
   color: #7d7d7d;
 }
 
-/* line 390, ../sass/smacss/_module.scss */
+/* line 394, ../sass/smacss/_module.scss */
+.m-singlepost-nav {
+  *zoom: 1;
+  display: block;
+  border-bottom: 0.0625em solid #de99ab;
+  padding: 0.625em 0;
+  margin: 1.25em 0 0.625em;
+}
+/* line 18, ../sass/lib/bourbon/addons/_clearfix.scss */
+.m-singlepost-nav:before, .m-singlepost-nav:after {
+  content: " ";
+  display: table;
+}
+/* line 23, ../sass/lib/bourbon/addons/_clearfix.scss */
+.m-singlepost-nav:after {
+  clear: both;
+}
+
+/* line 402, ../sass/smacss/_module.scss */
+.m-singlepost-previous,
+.m-singlepost-next {
+  color: #7d7d7d;
+}
+
+/* line 407, ../sass/smacss/_module.scss */
+.m-singlepost-previous a,
+.m-singlepost-next a {
+  text-decoration: underline;
+  font-style: italic;
+}
+
+/* line 412, ../sass/smacss/_module.scss */
 .m-singlepost-comments {
   margin: 2.1875em 0 0;
   color: #7d7d7d;
 }
 
-/* line 395, ../sass/smacss/_module.scss */
+/* line 417, ../sass/smacss/_module.scss */
 .m-singlepost-comments h3 {
   font-size: 1.25em;
   margin: 0;
 }
 
-/* line 400, ../sass/smacss/_module.scss */
+/* line 422, ../sass/smacss/_module.scss */
 .m-singlepost-comments h3 a {
   color: #de99ab;
 }
 
-/* line 404, ../sass/smacss/_module.scss */
+/* line 426, ../sass/smacss/_module.scss */
 #cancel-comment-reply-link {
   color: #7d7d7d;
   text-decoration: underline;
   font-style: italic;
 }
 
-/* line 410, ../sass/smacss/_module.scss */
+/* line 432, ../sass/smacss/_module.scss */
 .comment-notes {
   font-size: 0.875em;
   margin: 0.71429em 0;
 }
 
-/* line 415, ../sass/smacss/_module.scss */
+/* line 437, ../sass/smacss/_module.scss */
 .m-singlepost-comments .form-submit {
   *zoom: 1;
   display: block;
@@ -1107,25 +1143,25 @@ h4, h5, h6 {
   clear: both;
 }
 
-/* line 420, ../sass/smacss/_module.scss */
+/* line 442, ../sass/smacss/_module.scss */
 .m-singlepost-comments input[type="submit"] {
   float: right;
 }
 
-/* line 424, ../sass/smacss/_module.scss */
+/* line 446, ../sass/smacss/_module.scss */
 .m-comments-number {
   font-size: 1.125em;
   margin-bottom: 1.38889em;
 }
 
-/* line 429, ../sass/smacss/_module.scss */
+/* line 451, ../sass/smacss/_module.scss */
 .m-singlepost-comments .comment {
   margin-top: 0.625em;
   padding: 0.625em 0 0 4.375em;
   border-top: 1px dotted #de99ab;
 }
 
-/* line 435, ../sass/smacss/_module.scss */
+/* line 457, ../sass/smacss/_module.scss */
 .m-singlepost-comments .depth-1 {
   padding: 0 0 1.875em;
   margin: 0 0 1.875em;
@@ -1133,85 +1169,115 @@ h4, h5, h6 {
   border-bottom: 1px solid #de99ab;
 }
 
-/* line 442, ../sass/smacss/_module.scss */
+/* line 464, ../sass/smacss/_module.scss */
 .m-singlepost-comments .depth-2 {
   padding: 0.625em 0 0 1.875em;
 }
 
-/* line 446, ../sass/smacss/_module.scss */
+/* line 468, ../sass/smacss/_module.scss */
 .m-singlepost-comments .depth-2 {
   padding: 0.625em 0 0 2.5em;
 }
 
-/* line 450, ../sass/smacss/_module.scss */
+/* line 472, ../sass/smacss/_module.scss */
 .m-singlepost-comments .depth-3 {
   padding: 0.625em 0 0 3.125em;
 }
 
-/* line 454, ../sass/smacss/_module.scss */
+/* line 476, ../sass/smacss/_module.scss */
 .m-singlepost-comments .depth-4 {
   padding: 0.625em 0 0 3.75em;
 }
 
-/* line 458, ../sass/smacss/_module.scss */
+/* line 480, ../sass/smacss/_module.scss */
 .m-comments-list .comment-author {
   font-size: 1.125em;
   color: #de99ab;
 }
 
-/* line 463, ../sass/smacss/_module.scss */
+/* line 485, ../sass/smacss/_module.scss */
 .m-comments-list .comment-author:before {
   content: "•";
 }
 
-/* line 467, ../sass/smacss/_module.scss */
+/* line 489, ../sass/smacss/_module.scss */
 .m-comments-list .comment-author a {
   color: #de99ab;
   text-decoration: underline;
 }
 
-/* line 473, ../sass/smacss/_module.scss */
+/* line 495, ../sass/smacss/_module.scss */
 .m-comments-list .comment-author a:hover,
 .m-comments-list .comment-author a:focus {
   color: #7d7d7d;
 }
 
-/* line 477, ../sass/smacss/_module.scss */
+/* line 499, ../sass/smacss/_module.scss */
 .m-comments-list .comment-meta a {
   font-size: 0.875em;
   font-style: italic;
   color: #7d7d7d;
 }
 
-/* line 483, ../sass/smacss/_module.scss */
+/* line 505, ../sass/smacss/_module.scss */
 .m-comments-list .comment-body p {
   font-size: 0.875em;
   margin: 1.07143em auto;
 }
 
-/* line 488, ../sass/smacss/_module.scss */
+/* line 510, ../sass/smacss/_module.scss */
 .m-comments-list .comment-body p a {
   color: #de99ab;
   text-decoration: underline;
 }
 
-/* line 494, ../sass/smacss/_module.scss */
+/* line 516, ../sass/smacss/_module.scss */
 .m-comments-list .comment-body p a:hover,
 .m-comments-list .comment-body p a:focus {
   color: #7d7d7d;
 }
 
-/* line 498, ../sass/smacss/_module.scss */
+/* line 520, ../sass/smacss/_module.scss */
 .m-comments-list .reply a {
   text-decoration: underline;
   font-style: italic;
   color: #de99ab;
 }
 
-/* line 505, ../sass/smacss/_module.scss */
+/* line 527, ../sass/smacss/_module.scss */
 .m-comments-list .reply a:hover,
 .m-comments-list .reply a:focus {
   color: #7d7d7d;
+}
+
+/* line 531, ../sass/smacss/_module.scss */
+.m-backtop {
+  position: fixed;
+  bottom: 2.1875em;
+  right: 2.1875em;
+  width: 2.1875em;
+  height: 2.1875em;
+  line-height: 2.5em;
+  background: #de99ab;
+  color: white;
+  text-align: center;
+  border-radius: 1.5625em;
+  cursor: pointer;
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+  opacity: 1;
+}
+
+/* line 547, ../sass/smacss/_module.scss */
+.m-backtop:hover {
+  background: #c2bc76;
+  color: white;
+}
+
+/* line 552, ../sass/smacss/_module.scss */
+.hiding {
+  opacity: 0;
 }
 
 /******************/

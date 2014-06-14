@@ -34,6 +34,24 @@
     	  	$(this).addClass(Class);
 	  });
 
+	  
+	  $(window).scroll(function(){
+		  	if($(window).scrollTop()>200){
+				$('.m-backtop').removeClass('hiding');
+		    }
+	  		else if($(window).scrollTop()<200){
+				$('.m-backtop').addClass('hiding');
+			}
+	  });
+	  
+      $(document).on('click', '.m-backtop', function(event){
+          event.preventDefault();
+		  $('html,body').animate({
+		      scrollTop: 0
+		  }, 1000);
+		  return false;
+      });
+	  
     })
 
 })(jQuery);

@@ -2,7 +2,7 @@
   <div class="l-main">
     <section class="l-content">
       <?php query_posts(array('post__in'=>get_option('sticky_posts'))); ?>
-        <div class="m-slider swiper-container">
+        <div class="m-slider swiper-container" role="slider">
           <div class="swiper-wrapper">
             <?php while (have_posts()) : the_post(); ?>
           		<article class="swiper-slide">
@@ -15,8 +15,9 @@
         </div>
       <?php wp_reset_query(); ?>
       <?php $postcount = 0; ?>
+	  <?php $query = new WP_Query( array( 'ignore_sticky_posts' => 1) );?>
       <div class="m-postlist">
-        <?php while (have_posts()) : the_post(); ?>
+        <?php while ($query->have_posts() ) : $query->the_post(); ?>
           <?php $postcount++; ?>
           <article class="post<?php if ( $postcount%3 == 1 ) { echo ' is-cleared'; } ?>">
             <div class="box<?php if ( $postcount%3 == 2 ) { echo ' second'; } ?><?php if ( $postcount%3 == 0 ) { echo ' is-right'; } ?>">
@@ -31,8 +32,10 @@
           </article>
         <?php endwhile; ?>
       </div>
+      <?php wp_reset_query(); ?>
     </section>
     <?php get_sidebar(); ?>
   </div>
+  <a class="m-backtop hiding" href="#">^</a>
   <?php get_footer(); ?>
-</div>
+

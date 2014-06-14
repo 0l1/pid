@@ -4,15 +4,15 @@ add_theme_support( 'post-thumbnails' );
 add_image_size( 'sliderthumb', 725, 375, true);
 add_image_size( 'mosaicthumb', 230, 230, true);
 add_image_size( 'singlepage-banner', 725, 235, true);
-// if (class_exists('MultiPostThumbnails')) {
-//     new MultiPostThumbnails(
-//         array(
-//             'label' => 'Slider Image',
-//             'id' => 'slider-image',
-//             'post_type' => 'post',
-//         )
-//     );
-// }
+if (class_exists('MultiPostThumbnails')) {
+    new MultiPostThumbnails(
+        array(
+            'label' => 'Bannière du Post',
+            'id' => 'singlepage-banner',
+            'post_type' => 'post',
+        )
+    );
+}
 
 function catch_that_image() {
   global $post, $posts;

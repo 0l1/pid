@@ -6,11 +6,17 @@
 	<a href="#comments" class="t-singlelink is-right"><?php comments_number( 'Aucun commentaire', '1 commentaire', '% commentaires' ); ?> </a>
     <?php while (have_posts()) : the_post(); ?>
           <article class="m-singlepost">
-			<?php the_post_thumbnail('singlepage-banner'); ?>
-            <h1 class="m-singlepost-title"><?php the_title(); ?></h1>
-            <section class="m-singlepost-content">
+			<header role="heading">
+				<?php MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'singlepage-banner', NULL,  'singlepage-banner'); ?>
+            	<h1 class="m-singlepost-title"><?php the_title(); ?></h1>
+			</header>
+            <main class="m-singlepost-content" role="article">
               <?php the_content(); ?>
-            </section>
+            </main>
+			<nav role="navigation" class="m-singlepost-nav">
+				<span class="m-singlepost-previous is-left"><?php previous_post_link('&lsaquo; %link','Article précédent'); ?></span>
+				<span class="m-singlepost-next is-right"><?php next_post_link('%link &rsaquo; ','Article suivant'); ?></span>
+			</nav>
 		    <aside>
 		  	  <a href="#comments" class="t-singlelink"><?php comments_number( 'Aucun commentaire', '1 commentaire', '% commentaires' ); ?> </a> <span class="t-bulletsep">•</span> 
 		  	  <a href="#comments" class="t-singlelink">Ajouter un commentaire</a>
@@ -60,4 +66,5 @@
   </section>
   <?php get_sidebar(); ?>
 </div>
+<a class="m-backtop hiding" href="#">^</a>
 <?php get_footer(); ?>

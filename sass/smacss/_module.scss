@@ -356,6 +356,10 @@ $social: (facebook, pinterest, instagram);
 	margin: 0 auto;
 }
 
+.m-singlepost {
+	clear: both;
+}
+
 .m-singlepost-title {
 	color: $darkgrey;
 	font-size: em(32,16);
@@ -385,6 +389,24 @@ $social: (facebook, pinterest, instagram);
 .m-singlepost-content a:hover,
 .m-singlepost-content a:focus {
 	color: $darkgrey;
+}
+
+.m-singlepost-nav {
+	@include row();
+	border-bottom: em(1,16) solid $pinklink;
+	padding: em(10,16) 0;
+	margin: em(20,16) 0 em(10,16);
+}
+
+.m-singlepost-previous,
+.m-singlepost-next {
+	color: $darkgrey;
+}
+
+.m-singlepost-previous a,
+.m-singlepost-next a {
+	text-decoration: underline;
+	font-style: italic;
 }
 
 .m-singlepost-comments {
@@ -504,4 +526,29 @@ $social: (facebook, pinterest, instagram);
 .m-comments-list .reply a:hover,
 .m-comments-list .reply a:focus {
 	color: $darkgrey;
+}
+
+.m-backtop {
+	position: fixed;
+	bottom: em(35,16);
+	right: em(35,16);
+	width: em(35,16);
+	height: em(35,16);
+	line-height: em(40,16);
+	background: $pinklink;
+	color: $white;
+	text-align: center;
+	border-radius: em(25,16);
+	cursor: pointer;
+	@include transition(all 0.25s ease-in);
+	opacity: 1;
+}
+
+.m-backtop:hover {
+	background: $mustard;
+	color: $white;
+}
+
+.hiding {
+	opacity: 0;
 }
