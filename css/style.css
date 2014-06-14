@@ -979,15 +979,17 @@ h4, h5, h6 {
   font-size: 1.25em;
   line-height: 1em;
   font-style: italic;
+  max-height: 1em;
   margin: 0;
+  overflow: hidden;
 }
 
-/* line 320, ../sass/smacss/_module.scss */
+/* line 322, ../sass/smacss/_module.scss */
 .m-postlist .post-title a {
   color: #7d7d7d;
 }
 
-/* line 324, ../sass/smacss/_module.scss */
+/* line 326, ../sass/smacss/_module.scss */
 .m-postlist .post-infos .sep {
   width: 2.8125em;
   height: 0.0625em;
@@ -995,14 +997,14 @@ h4, h5, h6 {
   background: #7d7d7d;
 }
 
-/* line 331, ../sass/smacss/_module.scss */
+/* line 333, ../sass/smacss/_module.scss */
 .m-postlist .post-desc {
   font-size: 0.8125em;
   line-height: 1.38462em;
   color: #7d7d7d;
 }
 
-/* line 337, ../sass/smacss/_module.scss */
+/* line 339, ../sass/smacss/_module.scss */
 .m-postlist .post-more {
   display: block;
   width: 1.40625em;
@@ -1018,18 +1020,18 @@ h4, h5, h6 {
 /*****************/
 /*  Single Post  */
 /*****************/
-/* line 354, ../sass/smacss/_module.scss */
+/* line 356, ../sass/smacss/_module.scss */
 .attachment-singlepage-banner {
   display: block;
   margin: 0 auto;
 }
 
-/* line 359, ../sass/smacss/_module.scss */
+/* line 361, ../sass/smacss/_module.scss */
 .m-singlepost {
   clear: both;
 }
 
-/* line 363, ../sass/smacss/_module.scss */
+/* line 365, ../sass/smacss/_module.scss */
 .m-singlepost-title {
   color: #7d7d7d;
   font-size: 2em;
@@ -1038,35 +1040,36 @@ h4, h5, h6 {
   margin: 0.78125em auto 0.625em;
 }
 
-/* line 371, ../sass/smacss/_module.scss */
+/* line 373, ../sass/smacss/_module.scss */
 .m-singlepost-content {
   color: #7d7d7d;
 }
 
-/* line 375, ../sass/smacss/_module.scss */
+/* line 377, ../sass/smacss/_module.scss */
 .m-singlepost-content img {
   display: block;
   margin: 0 auto 1.25em;
+  max-width: 100%;
 }
 
-/* line 380, ../sass/smacss/_module.scss */
+/* line 383, ../sass/smacss/_module.scss */
 .m-singlepost-content p {
   font-size: 0.875em;
   margin-bottom: 1.42857em;
 }
 
-/* line 385, ../sass/smacss/_module.scss */
+/* line 388, ../sass/smacss/_module.scss */
 .m-singlepost-content a {
   color: #de99ab;
 }
 
-/* line 390, ../sass/smacss/_module.scss */
+/* line 393, ../sass/smacss/_module.scss */
 .m-singlepost-content a:hover,
 .m-singlepost-content a:focus {
   color: #7d7d7d;
 }
 
-/* line 394, ../sass/smacss/_module.scss */
+/* line 397, ../sass/smacss/_module.scss */
 .m-singlepost-nav {
   *zoom: 1;
   display: block;
@@ -1084,50 +1087,50 @@ h4, h5, h6 {
   clear: both;
 }
 
-/* line 402, ../sass/smacss/_module.scss */
+/* line 405, ../sass/smacss/_module.scss */
 .m-singlepost-previous,
 .m-singlepost-next {
   color: #7d7d7d;
 }
 
-/* line 407, ../sass/smacss/_module.scss */
+/* line 410, ../sass/smacss/_module.scss */
 .m-singlepost-previous a,
 .m-singlepost-next a {
   text-decoration: underline;
   font-style: italic;
 }
 
-/* line 412, ../sass/smacss/_module.scss */
+/* line 415, ../sass/smacss/_module.scss */
 .m-singlepost-comments {
   margin: 2.1875em 0 0;
   color: #7d7d7d;
 }
 
-/* line 417, ../sass/smacss/_module.scss */
+/* line 420, ../sass/smacss/_module.scss */
 .m-singlepost-comments h3 {
   font-size: 1.25em;
   margin: 0;
 }
 
-/* line 422, ../sass/smacss/_module.scss */
+/* line 425, ../sass/smacss/_module.scss */
 .m-singlepost-comments h3 a {
   color: #de99ab;
 }
 
-/* line 426, ../sass/smacss/_module.scss */
+/* line 429, ../sass/smacss/_module.scss */
 #cancel-comment-reply-link {
   color: #7d7d7d;
   text-decoration: underline;
   font-style: italic;
 }
 
-/* line 432, ../sass/smacss/_module.scss */
+/* line 435, ../sass/smacss/_module.scss */
 .comment-notes {
   font-size: 0.875em;
   margin: 0.71429em 0;
 }
 
-/* line 437, ../sass/smacss/_module.scss */
+/* line 440, ../sass/smacss/_module.scss */
 .m-singlepost-comments .form-submit {
   *zoom: 1;
   display: block;
@@ -1143,25 +1146,25 @@ h4, h5, h6 {
   clear: both;
 }
 
-/* line 442, ../sass/smacss/_module.scss */
+/* line 445, ../sass/smacss/_module.scss */
 .m-singlepost-comments input[type="submit"] {
   float: right;
 }
 
-/* line 446, ../sass/smacss/_module.scss */
+/* line 449, ../sass/smacss/_module.scss */
 .m-comments-number {
   font-size: 1.125em;
   margin-bottom: 1.38889em;
 }
 
-/* line 451, ../sass/smacss/_module.scss */
+/* line 454, ../sass/smacss/_module.scss */
 .m-singlepost-comments .comment {
   margin-top: 0.625em;
   padding: 0.625em 0 0 4.375em;
   border-top: 1px dotted #de99ab;
 }
 
-/* line 457, ../sass/smacss/_module.scss */
+/* line 460, ../sass/smacss/_module.scss */
 .m-singlepost-comments .depth-1 {
   padding: 0 0 1.875em;
   margin: 0 0 1.875em;
@@ -1169,88 +1172,88 @@ h4, h5, h6 {
   border-bottom: 1px solid #de99ab;
 }
 
-/* line 464, ../sass/smacss/_module.scss */
+/* line 467, ../sass/smacss/_module.scss */
 .m-singlepost-comments .depth-2 {
   padding: 0.625em 0 0 1.875em;
 }
 
-/* line 468, ../sass/smacss/_module.scss */
+/* line 471, ../sass/smacss/_module.scss */
 .m-singlepost-comments .depth-2 {
   padding: 0.625em 0 0 2.5em;
 }
 
-/* line 472, ../sass/smacss/_module.scss */
+/* line 475, ../sass/smacss/_module.scss */
 .m-singlepost-comments .depth-3 {
   padding: 0.625em 0 0 3.125em;
 }
 
-/* line 476, ../sass/smacss/_module.scss */
+/* line 479, ../sass/smacss/_module.scss */
 .m-singlepost-comments .depth-4 {
   padding: 0.625em 0 0 3.75em;
 }
 
-/* line 480, ../sass/smacss/_module.scss */
+/* line 483, ../sass/smacss/_module.scss */
 .m-comments-list .comment-author {
   font-size: 1.125em;
   color: #de99ab;
 }
 
-/* line 485, ../sass/smacss/_module.scss */
+/* line 488, ../sass/smacss/_module.scss */
 .m-comments-list .comment-author:before {
   content: "•";
 }
 
-/* line 489, ../sass/smacss/_module.scss */
+/* line 492, ../sass/smacss/_module.scss */
 .m-comments-list .comment-author a {
   color: #de99ab;
   text-decoration: underline;
 }
 
-/* line 495, ../sass/smacss/_module.scss */
+/* line 498, ../sass/smacss/_module.scss */
 .m-comments-list .comment-author a:hover,
 .m-comments-list .comment-author a:focus {
   color: #7d7d7d;
 }
 
-/* line 499, ../sass/smacss/_module.scss */
+/* line 502, ../sass/smacss/_module.scss */
 .m-comments-list .comment-meta a {
   font-size: 0.875em;
   font-style: italic;
   color: #7d7d7d;
 }
 
-/* line 505, ../sass/smacss/_module.scss */
+/* line 508, ../sass/smacss/_module.scss */
 .m-comments-list .comment-body p {
   font-size: 0.875em;
   margin: 1.07143em auto;
 }
 
-/* line 510, ../sass/smacss/_module.scss */
+/* line 513, ../sass/smacss/_module.scss */
 .m-comments-list .comment-body p a {
   color: #de99ab;
   text-decoration: underline;
 }
 
-/* line 516, ../sass/smacss/_module.scss */
+/* line 519, ../sass/smacss/_module.scss */
 .m-comments-list .comment-body p a:hover,
 .m-comments-list .comment-body p a:focus {
   color: #7d7d7d;
 }
 
-/* line 520, ../sass/smacss/_module.scss */
+/* line 523, ../sass/smacss/_module.scss */
 .m-comments-list .reply a {
   text-decoration: underline;
   font-style: italic;
   color: #de99ab;
 }
 
-/* line 527, ../sass/smacss/_module.scss */
+/* line 530, ../sass/smacss/_module.scss */
 .m-comments-list .reply a:hover,
 .m-comments-list .reply a:focus {
   color: #7d7d7d;
 }
 
-/* line 531, ../sass/smacss/_module.scss */
+/* line 534, ../sass/smacss/_module.scss */
 .m-backtop {
   position: fixed;
   bottom: 2.1875em;
@@ -1269,13 +1272,13 @@ h4, h5, h6 {
   opacity: 1;
 }
 
-/* line 547, ../sass/smacss/_module.scss */
+/* line 550, ../sass/smacss/_module.scss */
 .m-backtop:hover {
   background: #c2bc76;
   color: white;
 }
 
-/* line 552, ../sass/smacss/_module.scss */
+/* line 555, ../sass/smacss/_module.scss */
 .hiding {
   opacity: 0;
 }

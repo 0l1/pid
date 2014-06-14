@@ -314,7 +314,9 @@ $social: (facebook, pinterest, instagram);
     font-size: em(20,16);
 	line-height: em(20,20);
     font-style: italic;
+    max-height: em(20,20);
 	margin: 0;
+	overflow: hidden;
 }
 
 .m-postlist .post-title a {
@@ -375,6 +377,7 @@ $social: (facebook, pinterest, instagram);
 .m-singlepost-content img {
 	display: block;
 	margin: 0 auto em(20,16);
+	max-width: 100%;
 }
 
 .m-singlepost-content p {
