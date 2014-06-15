@@ -13,33 +13,33 @@ a:focus {
 	color: $pinklink;
 }
 
-.m-postlist img,
-.m-slider img,
-.attachment-singlepage-banner {
+.post-img,
+.sliderthumb,
+.post-banner {
 	border: 10px solid transparent;
 }
 
 .m-postlist .yellow,
 .m-slider .yellow,
-.attachment-singlepage-banner.yellow{
+.post-banner.yellow{
 	border: 10px solid  $yellowborder;
 }
 
 .m-postlist .green,
 .m-slider .green,
-.attachment-singlepage-banner.green {
+.post-banner.green {
 	border: 10px solid  $greenborder;
 }
 
 .m-postlist .pink,
 .m-slider .pink,
-.attachment-singlepage-banner.pink {
+.post-banner.pink {
 	border: 10px solid  $pinkborder;
 }
 
 .m-postlist .grey, 
 .m-slider .grey,
-.attachment-singlepage-banner.grey {
+.post-banner.grey {
 	border: 10px solid  $greyborder;
 }
 

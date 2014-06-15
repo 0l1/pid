@@ -7,7 +7,9 @@
     <?php while (have_posts()) : the_post(); ?>
           <article class="m-singlepost">
 			<header role="heading">
+				<div class="post-banner is-hidden">
 				<?php MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'singlepage-banner', NULL,  'singlepage-banner'); ?>
+				</div>
             	<h1 class="m-singlepost-title"><?php the_title(); ?></h1>
 			</header>
             <main class="m-singlepost-content" role="article">
@@ -66,5 +68,5 @@
   </section>
   <?php get_sidebar(); ?>
 </div>
-<a class="m-backtop hiding" href="#">^</a>
+<a class="m-backtop is-hidden" href="#">^</a>
 <?php get_footer(); ?>

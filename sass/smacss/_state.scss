@@ -25,6 +25,11 @@
   @include transition (opacity 0.5s ease-in);
 }
 
+.is-hidden {
+	display: none;
+	opacity: 0;
+}
+
 /*****************/
 /*    Floating   */
 /*****************/

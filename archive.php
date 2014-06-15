@@ -27,5 +27,5 @@
     </section>
     <?php get_sidebar(); ?>
   </div>
+  <a class="m-backtop is-hidden" href="#">^</a>
   <?php get_footer(); ?>
-</div>

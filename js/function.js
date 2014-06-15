@@ -27,20 +27,25 @@
       });
 	  
 	  
-	  $('.m-postlist img, .m-slider img, .attachment-singlepage-banner').each(function() {
+	  $('.post-img, .sliderthumb, .post-banner').each(function() {
     		var Colors = [ 'pink', 'yellow', 'green', 'grey' ];
     		var Class = Colors[Math.floor(Math.random()*Colors.length)];
 		  
     	  	$(this).addClass(Class);
 	  });
+	  
+      if ($('.attachment-singlepage-banner').size()>0) {
+		  $('.post-banner').removeClass('is-hidden');
+      }
+      
 
 	  
 	  $(window).scroll(function(){
 		  	if($(window).scrollTop()>200){
-				$('.m-backtop').removeClass('hiding');
+				$('.m-backtop').removeClass('is-hidden');
 		    }
 	  		else if($(window).scrollTop()<200){
-				$('.m-backtop').addClass('hiding');
+				$('.m-backtop').addClass('is-hidden');
 			}
 	  });
 	  

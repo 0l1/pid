@@ -7,7 +7,7 @@
             <?php while (have_posts()) : the_post(); ?>
           		<article class="swiper-slide">
           			<h1><a href="<?php the_permalink(); ?>" class="logo" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
-          			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('sliderthumb'); ?></a>
+          			<a class="sliderthumb" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('sliderthumb'); ?></a>
           		</article>
           	<?php endwhile; ?>
           </div>
@@ -36,6 +36,6 @@
     </section>
     <?php get_sidebar(); ?>
   </div>
-  <a class="m-backtop hiding" href="#">^</a>
+  <a class="m-backtop is-hidden" href="#">^</a>
   <?php get_footer(); ?>
 
