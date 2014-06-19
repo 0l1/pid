@@ -2,7 +2,10 @@
   <div class="l-main">
     <section class="l-content">
     <?php if (have_posts()) : ?>
-	<?php the_breadcrumb(); ?>
+
+    <aside class="m-singlepost-topnav">
+  	 <?php the_breadcrumb(); ?>
+    </aside>
       <?php $postcount = 0; ?>
       <div class="m-postlist">
         <?php while (have_posts()) : the_post(); ?>

@@ -6,25 +6,39 @@
 		<?php the_breadcrumb(); ?>
 		<a href="#comments" class="t-singlelink is-right"><?php comments_number( 'Aucun commentaire', '1 commentaire', '% commentaires' ); ?> </a>
     </aside>
+    
     <?php while (have_posts()) : the_post(); ?>
           <article class="m-singlepost">
-			<header role="heading">
-				<div class="post-banner is-hidden">
-				<?php MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'singlepage-banner', NULL,  'singlepage-banner'); ?>
-				</div>
-            	<h1 class="m-singlepost-title"><?php the_title(); ?></h1>
-			</header>
+          <header role="heading">
+			<div class="post-banner is-hidden">
+			<?php MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'singlepage-banner', NULL,  'singlepage-banner'); ?>
+			</div>
+			<h1 class="m-singlepost-title"><?php the_title(); ?></h1>
+		  </header>
             <main class="m-singlepost-content" role="article">
               <?php the_content(); ?>
             </main>
+            <footer class="m-singlepost-author" role="contentinfo">
+				<?php the_author_posts_link(); ?>
+			  </footer>
 			<nav role="navigation" class="m-singlepost-nav">
 				<span class="m-singlepost-previous is-left"><?php previous_post_link('&lsaquo; %link','Article précédent'); ?></span>
 				<span class="m-singlepost-next is-right"><?php next_post_link('%link &rsaquo; ','Article suivant'); ?></span>
 			</nav>
-		    <aside>
-		  	  <a href="#comments" class="t-singlelink"><?php comments_number( 'Aucun commentaire', '1 commentaire', '% commentaires' ); ?> </a> <span class="t-bulletsep">•</span> 
-		  	  <a href="#comments" class="t-singlelink">Ajouter un commentaire</a>
+		    <aside class="m-singlepost-cta">
+		  	  <a href="#comments" class="t-singlelink m-comment-cta"><?php comments_number( 'Aucun commentaire', '1 commentaire', '% commentaires' ); ?> </a> <span class="t-bulletsep m-comment-cta">•</span> 
+		  	  <a href="#comments" class="t-singlelink m-comment-cta">Ajouter un commentaire</a>
+		  	  <div class="m-singlepost-social is-right">
+		  	  	<a class="facebook is-static" href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + location.href, 'sharer', 'width=626,height=436');
+		    return false;">Share on Facebook</a>
+
+		    <a style="display: none"href="https://twitter.com/share" 
+class="twitter-share-button" data-via="PID_blog" data-size="large" 
+data-related="PID_blog" data-hash tags="PID">Tweet</a>
+
+			  </div>
 	  	    </aside>
+
             <aside id="comments" class="m-singlepost-comments">
 			  	<?php $formargs = array(
 			       	
@@ -60,14 +74,7 @@
 				<ul class="m-comments-list">
 					<?php wp_list_comments( $arg, $comments ); ?>
 				</ul>
-            </aside>
-
-<a style="display: none" href="#" 
-		  onclick="
-		    window.open('https://www.facebook.com/sharer/sharer.php?u=' + location.href, 'sharer', 'width=626,height=436');
-		    return false;">
-		  Share on Facebook
-		</a>			
+            </aside>		
 				
 				
           </article>

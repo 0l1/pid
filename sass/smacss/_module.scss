@@ -116,7 +116,7 @@
 /*    Social    */
 /***************/
 
-$social: (facebook, pinterest, instagram);
+$social: (facebook, twitter, pinterest, instagram);
 @each $network in $social {
   .#{$network} {
 	  @include icons-sprite(#{$network});
@@ -145,6 +145,7 @@ $social: (facebook, pinterest, instagram);
 }
 
 .facebook,
+.twitter,
 .pinterest, 
 .instagram {
 	position: absolute;
@@ -159,11 +160,12 @@ $social: (facebook, pinterest, instagram);
 	margin-left: - icons-sprite-width(facebook) / 2;
 }
 
-.pinterest {
+.twitter {
 	top: - em(28,16);
 	right: em(45,16);
 }
 
+.pinterest,
 .instagram {
 	top: 0;
 	right: 0;
@@ -421,6 +423,21 @@ $social: (facebook, pinterest, instagram);
 	color: $darkgrey;
 }
 
+.m-singlepost-author {
+	text-align: right;
+	margin-top: em(25,16);
+}
+
+.m-singlepost-author a {
+	@extend %Jennasue;
+	font-size: em(32,16);
+}
+
+.m-singlepost-author a:hover,
+.m-singlepost-author a:focus {
+	color: $pinklink;
+}
+
 .m-singlepost-nav {
 	@include row();
 	border-bottom: em(1,16) solid $pinklink;
@@ -438,6 +455,14 @@ $social: (facebook, pinterest, instagram);
 .m-singlepost-next a {
 	text-decoration: underline;
 	font-style: italic;
+}
+
+.m-singlepost-cta {
+	@include row();
+}
+
+.m-comment-cta {
+	line-height: em(35,13);
 }
 
 .m-singlepost-comments {

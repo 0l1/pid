@@ -194,7 +194,7 @@ function the_breadcrumb() {
             } else {
                 echo '<li><strong> '.get_the_title().'</strong></li>';
             }
-        }
+        } elseif (is_author()) {echo'<li>'.get_the_author().' Posts</li>';}
     }
     elseif (is_tag()) {single_tag_title();}
     elseif (is_day()) {echo"<li>Archive for "; the_time('F jS, Y'); echo'</li>';}
