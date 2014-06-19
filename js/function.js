@@ -2,16 +2,18 @@
 
     $(function(){
 
-      var mySwiper = $('.swiper-container').swiper({
-        //Your options here:
-        mode:'horizontal',
-        loop: true,
-        autoplay: 3000,
-        speed: 3000,
-		pagination: '.pagination',
-		paginationClickable: true
-        //etc..
-      });
+      if ($('.swiper-container').size()>0){
+        var mySwiper = $('.swiper-container').swiper({
+          //Your options here:
+          mode:'horizontal',
+          loop: true,
+          autoplay: 3000,
+          speed: 3000,
+  		    pagination: '.pagination',
+  		    paginationClickable: true
+          //etc..
+        });
+      }
 
 	  
       $('.sub-menu').addClass('is-transparent');

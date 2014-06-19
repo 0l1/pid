@@ -2,8 +2,10 @@
 <div class="l-main">
   <section class="l-content">
     <?php if (have_posts()) : ?>
-	<?php the_breadcrumb(); ?>
-	<a href="#comments" class="t-singlelink is-right"><?php comments_number( 'Aucun commentaire', '1 commentaire', '% commentaires' ); ?> </a>
+	<aside class="m-singlepost-topnav">
+		<?php the_breadcrumb(); ?>
+		<a href="#comments" class="t-singlelink is-right"><?php comments_number( 'Aucun commentaire', '1 commentaire', '% commentaires' ); ?> </a>
+    </aside>
     <?php while (have_posts()) : the_post(); ?>
           <article class="m-singlepost">
 			<header role="heading">
@@ -59,7 +61,13 @@
 					<?php wp_list_comments( $arg, $comments ); ?>
 				</ul>
             </aside>
-				
+
+<a style="display: none" href="#" 
+		  onclick="
+		    window.open('https://www.facebook.com/sharer/sharer.php?u=' + location.href, 'sharer', 'width=626,height=436');
+		    return false;">
+		  Share on Facebook
+		</a>			
 				
 				
           </article>

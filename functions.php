@@ -222,16 +222,22 @@ function scripts() {
 	wp_deregister_script('jquery');
 	wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js", null, '1.11.0', true);
 	wp_enqueue_script('jquery');
-	wp_register_script( 'slider', get_template_directory_uri() . '/js/idangerous.swiper.min.js', null,'2.5.1', true);
-	wp_enqueue_script( 'slider');
-	wp_register_script( 'function', get_template_directory_uri() . '/js/function.js', null, '1.0.0', true);
-	wp_enqueue_script( 'function');
+    wp_register_script( 'function', get_template_directory_uri() . '/js/function.js', null, '1.0.0', true);
+    wp_enqueue_script( 'function');
+    
+    if( is_home()){
+	   wp_register_script( 'slider', get_template_directory_uri() . '/js/idangerous.swiper.min.js', null,'2.5.1', true);
+	   wp_enqueue_script( 'slider');
+    }
 }
 
 //Enregistrement des styles
 function styles() {
 	wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css', null, '1.0.0' );
-	wp_enqueue_style( 'slider', get_template_directory_uri() . '/js/idangerous.swiper.css', null, '2.5.1' );
+	
+    if( is_home()){
+        wp_enqueue_style( 'slider', get_template_directory_uri() . '/js/idangerous.swiper.css', null, '2.5.1' );
+    }
 }
 
 // Appel des scripts et des styles

@@ -198,15 +198,16 @@ $social: (facebook, pinterest, instagram);
 /*    Breadcrumbs    */
 /*********************/
 
-.m-breadcrumbs {
-	margin-bottom: em(15,16);
-}
 
 .m-breadcrumbs li,
 .m-breadcrumbs a {
 	display: inline;
 	color: $darkgrey;
 	font-style: italic;
+}
+
+.m-breadcrumbs li {
+	font-size: em(13,16);
 }
 
 .m-breadcrumbs a:hover,
@@ -365,6 +366,11 @@ $social: (facebook, pinterest, instagram);
 /*  Single Post  */
 /*****************/
 
+.m-singlepost-topnav {
+	@include row();
+	margin-bottom: em(20,16);
+}
+
 .post-banner {
 	display:block;
 	width: em(725,16);
@@ -383,10 +389,10 @@ $social: (facebook, pinterest, instagram);
 
 .m-singlepost-title {
 	color: $darkgrey;
-	font-size: em(32,16);
+	font-size: em(40,16);
 	text-align: center;
 	font-style: italic;
-	margin: em(25,32) auto em(20,32);
+	margin: em(30,40) auto em(25,40);
 }
 
 .m-singlepost-content {
@@ -395,17 +401,19 @@ $social: (facebook, pinterest, instagram);
 
 .m-singlepost-content img {
 	display: block;
-	margin: 0 auto em(20,16);
+	margin: 0 auto em(25,16);
 	max-width: 100%;
 }
 
 .m-singlepost-content p {
 	font-size: em(14,16);
-	margin-bottom: em(20,14);
+	line-height: em(22,14);
+	margin-bottom: em(25,14);
 }
 
 .m-singlepost-content a {
 	color: $pinklink;
+	text-decoration: underline;
 }
 
 .m-singlepost-content a:hover,
@@ -422,6 +430,7 @@ $social: (facebook, pinterest, instagram);
 
 .m-singlepost-previous,
 .m-singlepost-next {
+	font-size: em(13,16);
 	color: $darkgrey;
 }
 
@@ -466,8 +475,8 @@ $social: (facebook, pinterest, instagram);
 }
 
 .m-comments-number {
-	font-size:em(18,16);
-	margin-bottom: em(25,18);
+	font-size:em(20,16);
+	margin-bottom: em(25,20);
 }
 
 .m-singlepost-comments .comment {
@@ -500,7 +509,7 @@ $social: (facebook, pinterest, instagram);
 }
 
 .m-comments-list .comment-author {
-	font-size: em(18,16);
+	font-size: em(20,16);
 	color: $pinklink;
 }
 
@@ -519,7 +528,7 @@ $social: (facebook, pinterest, instagram);
 }
 
 .m-comments-list .comment-meta a {
-	font-size: em(14,16);
+	font-size: em(13,16);
 	font-style: italic;
 	color: $darkgrey;
 }

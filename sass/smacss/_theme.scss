@@ -48,6 +48,7 @@ a:focus {
 /*********************/
 
 .t-singlelink {
+	font-size: em(13,16);
 	text-decoration: underline;
 	font-style: italic;
 	color: $darkgrey;
@@ -59,8 +60,9 @@ a:focus {
 }
 
 .t-bulletsep {
+	font-size: em(13,16);
 	color: $darkgrey;
-	padding: 0 em(15,16);
+	padding: 0 em(15,13);
 }
 
 /**************/
@@ -75,7 +77,7 @@ input[type="number"], input[type="email"],
 input[type="url"], input[type="search"], 
 input[type="tel"], input[type="color"],
 textarea  {
-	font-size: 14px;
+	font-size: 13px;
 	line-height: 25px;
 	font-style: italic;
 	color: $pinklink;
