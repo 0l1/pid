@@ -4,7 +4,7 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <?php if(is_single()): ?>
      <?php 
-    $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
+    $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
     $url = $thumb['0'];
     ?>
     <meta property="og:title" content="<?php the_title();?>"/>
@@ -16,14 +16,13 @@
     <meta property="fb:app_id" content="1414506962170574"/>
     <meta property="og:description"
           content="Découvrez l'article '<?php the_title();?>' sur Princess in Disguise"/>
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<?php the_title();?>">
     <meta name="twitter:site:id" content="2575090386">
     <meta name="twitter:site" content="@PID_blog">
     <meta name="twitter:creator" content="@PID_blog">
     <meta name="twitter:description" content="Découvrez l'article '<?php the_title();?>' sur Princess in Disguise">
     <meta name="twitter:image:src" content="<?php echo $url; ?>">
-    <meta name="twitter:domain" content="https://twitter.com/PID_blog">
     <?php endif; ?>
     <title><?php the_title(); ?></title>
     <?php wp_head(); ?>
