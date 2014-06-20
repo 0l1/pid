@@ -229,6 +229,10 @@ function scripts() {
 	   wp_register_script( 'slider', get_template_directory_uri() . '/js/idangerous.swiper.min.js', null,'2.5.1', true);
 	   wp_enqueue_script( 'slider');
     }
+    if( is_single()){
+       wp_register_script('twitter', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://platform.twitter.com/widgets.js", null, null, true);
+       wp_enqueue_script( 'twitter');
+    }
 }
 
 //Enregistrement des styles

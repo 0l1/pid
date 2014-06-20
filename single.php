@@ -29,13 +29,11 @@
 		  	  <a href="#comments" class="t-singlelink m-comment-cta"><?php comments_number( 'Aucun commentaire', '1 commentaire', '% commentaires' ); ?> </a> <span class="t-bulletsep m-comment-cta">•</span> 
 		  	  <a href="#comments" class="t-singlelink m-comment-cta">Ajouter un commentaire</a>
 		  	  <div class="m-singlepost-social is-right">
-		  	  	<a class="facebook is-static" href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + location.href, 'sharer', 'width=626,height=436');
+		  	  	<a class="facebook is-left is-static" href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + location.href, 'sharer', 'width=626,height=436');
 		    return false;">Share on Facebook</a>
-
-		    <a style="display: none"href="https://twitter.com/share" 
-class="twitter-share-button" data-via="PID_blog" data-size="large" 
+			    <a class="twitter is-left is-static" href="https://twitter.com/intent/tweet?original_referer=<?php echo urlencode(get_permalink()); ?>&related=PID_blog&text=<?php echo urlencode(get_the_title()); ?>&url=<?php echo urlencode(get_permalink()); ?>&via=PID_blog" 
+class="twitter-share" data-via="PID_blog" data-size="large" 
 data-related="PID_blog" data-hash tags="PID">Tweet</a>
-
 			  </div>
 	  	    </aside>
 

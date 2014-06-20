@@ -29,53 +29,32 @@
       });
 	  
 	  
-	  $('.post-img, .sliderthumb, .post-banner').each(function() {
+	    $('.post-img, .sliderthumb, .post-banner').each(function() {
     		var Colors = [ 'pink', 'yellow', 'green', 'grey' ];
     		var Class = Colors[Math.floor(Math.random()*Colors.length)];
 		  
     	  	$(this).addClass(Class);
-	  });
+	    });
 	  
       if ($('.attachment-singlepage-banner').size()>0) {
-		  $('.post-banner').removeClass('is-hidden');
+		    $('.post-banner').removeClass('is-hidden');
       }
-
-
-      if ($('.twitter-share-button').size()>0) {
-          $('.twitter-share-button').click(function(event) {
-          var width  = 575,
-              height = 400,
-              left   = ($(window).width()  - width)  / 2,
-              top    = ($(window).height() - height) / 2,
-              url    = this.href,
-              opts   = 'status=1' +
-                       ',width='  + width  +
-                       ',height=' + height +
-                       ',top='    + top    +
-                       ',left='   + left;
-          
-          window.open(url, 'twitter', opts);
-       
-          return false;
-        });
-      }
-
 	  
-	  $(window).scroll(function(){
+	    $(window).scroll(function(){
 		  	if($(window).scrollTop()>200){
-				$('.m-backtop').removeClass('is-hidden');
+				  $('.m-backtop').removeClass('is-hidden');
 		    }
 	  		else if($(window).scrollTop()<200){
-				$('.m-backtop').addClass('is-hidden');
-			}
-	  });
+				  $('.m-backtop').addClass('is-hidden');
+			  }
+	    });
 	  
       $(document).on('click', '.m-backtop', function(event){
           event.preventDefault();
 		  $('html,body').animate({
 		      scrollTop: 0
 		  }, 1000);
-		  return false;
+		   return false;
       });
 	  
     })

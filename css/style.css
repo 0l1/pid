@@ -1194,36 +1194,41 @@ h4, h5, h6 {
 }
 
 /* line 468, ../sass/smacss/_module.scss */
+.m-singlepost-social .facebook {
+  margin-right: 0.625em;
+}
+
+/* line 472, ../sass/smacss/_module.scss */
 .m-singlepost-comments {
   margin: 2.1875em 0 0;
   color: #7d7d7d;
 }
 
-/* line 473, ../sass/smacss/_module.scss */
+/* line 477, ../sass/smacss/_module.scss */
 .m-singlepost-comments h3 {
   font-size: 1.25em;
   margin: 0;
 }
 
-/* line 478, ../sass/smacss/_module.scss */
+/* line 482, ../sass/smacss/_module.scss */
 .m-singlepost-comments h3 a {
   color: #de99ab;
 }
 
-/* line 482, ../sass/smacss/_module.scss */
+/* line 486, ../sass/smacss/_module.scss */
 #cancel-comment-reply-link {
   color: #7d7d7d;
   text-decoration: underline;
   font-style: italic;
 }
 
-/* line 488, ../sass/smacss/_module.scss */
+/* line 492, ../sass/smacss/_module.scss */
 .comment-notes {
   font-size: 0.875em;
   margin: 0.71429em 0;
 }
 
-/* line 493, ../sass/smacss/_module.scss */
+/* line 497, ../sass/smacss/_module.scss */
 .m-singlepost-comments .form-submit {
   *zoom: 1;
   display: block;
@@ -1239,25 +1244,25 @@ h4, h5, h6 {
   clear: both;
 }
 
-/* line 498, ../sass/smacss/_module.scss */
+/* line 502, ../sass/smacss/_module.scss */
 .m-singlepost-comments input[type="submit"] {
   float: right;
 }
 
-/* line 502, ../sass/smacss/_module.scss */
+/* line 506, ../sass/smacss/_module.scss */
 .m-comments-number {
   font-size: 1.25em;
   margin-bottom: 1.25em;
 }
 
-/* line 507, ../sass/smacss/_module.scss */
+/* line 511, ../sass/smacss/_module.scss */
 .m-singlepost-comments .comment {
   margin-top: 0.625em;
   padding: 0.625em 0 0 4.375em;
   border-top: 1px dotted #de99ab;
 }
 
-/* line 513, ../sass/smacss/_module.scss */
+/* line 517, ../sass/smacss/_module.scss */
 .m-singlepost-comments .depth-1 {
   padding: 0 0 1.875em;
   margin: 0 0 1.875em;
@@ -1265,88 +1270,88 @@ h4, h5, h6 {
   border-bottom: 1px solid #de99ab;
 }
 
-/* line 520, ../sass/smacss/_module.scss */
+/* line 524, ../sass/smacss/_module.scss */
 .m-singlepost-comments .depth-2 {
   padding: 0.625em 0 0 1.875em;
 }
 
-/* line 524, ../sass/smacss/_module.scss */
+/* line 528, ../sass/smacss/_module.scss */
 .m-singlepost-comments .depth-2 {
   padding: 0.625em 0 0 2.5em;
 }
 
-/* line 528, ../sass/smacss/_module.scss */
+/* line 532, ../sass/smacss/_module.scss */
 .m-singlepost-comments .depth-3 {
   padding: 0.625em 0 0 3.125em;
 }
 
-/* line 532, ../sass/smacss/_module.scss */
+/* line 536, ../sass/smacss/_module.scss */
 .m-singlepost-comments .depth-4 {
   padding: 0.625em 0 0 3.75em;
 }
 
-/* line 536, ../sass/smacss/_module.scss */
+/* line 540, ../sass/smacss/_module.scss */
 .m-comments-list .comment-author {
   font-size: 1.25em;
   color: #de99ab;
 }
 
-/* line 541, ../sass/smacss/_module.scss */
+/* line 545, ../sass/smacss/_module.scss */
 .m-comments-list .comment-author:before {
   content: "•";
 }
 
-/* line 545, ../sass/smacss/_module.scss */
+/* line 549, ../sass/smacss/_module.scss */
 .m-comments-list .comment-author a {
   color: #de99ab;
   text-decoration: underline;
 }
 
-/* line 551, ../sass/smacss/_module.scss */
+/* line 555, ../sass/smacss/_module.scss */
 .m-comments-list .comment-author a:hover,
 .m-comments-list .comment-author a:focus {
   color: #7d7d7d;
 }
 
-/* line 555, ../sass/smacss/_module.scss */
+/* line 559, ../sass/smacss/_module.scss */
 .m-comments-list .comment-meta a {
   font-size: 0.8125em;
   font-style: italic;
   color: #7d7d7d;
 }
 
-/* line 561, ../sass/smacss/_module.scss */
+/* line 565, ../sass/smacss/_module.scss */
 .m-comments-list .comment-body p {
   font-size: 0.875em;
   margin: 1.07143em auto;
 }
 
-/* line 566, ../sass/smacss/_module.scss */
+/* line 570, ../sass/smacss/_module.scss */
 .m-comments-list .comment-body p a {
   color: #de99ab;
   text-decoration: underline;
 }
 
-/* line 572, ../sass/smacss/_module.scss */
+/* line 576, ../sass/smacss/_module.scss */
 .m-comments-list .comment-body p a:hover,
 .m-comments-list .comment-body p a:focus {
   color: #7d7d7d;
 }
 
-/* line 576, ../sass/smacss/_module.scss */
+/* line 580, ../sass/smacss/_module.scss */
 .m-comments-list .reply a {
   text-decoration: underline;
   font-style: italic;
   color: #de99ab;
 }
 
-/* line 583, ../sass/smacss/_module.scss */
+/* line 587, ../sass/smacss/_module.scss */
 .m-comments-list .reply a:hover,
 .m-comments-list .reply a:focus {
   color: #7d7d7d;
 }
 
-/* line 587, ../sass/smacss/_module.scss */
+/* line 591, ../sass/smacss/_module.scss */
 .m-backtop {
   display: block;
   position: fixed;
@@ -1366,7 +1371,7 @@ h4, h5, h6 {
   opacity: 1;
 }
 
-/* line 604, ../sass/smacss/_module.scss */
+/* line 608, ../sass/smacss/_module.scss */
 .m-backtop:hover {
   background: #c2bc76;
   color: white;
