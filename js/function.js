@@ -18,14 +18,14 @@
 	  
       $('.sub-menu').addClass('is-transparent');
 
-      $(document).on('mouseenter', '.level-0, .m-postlist .box', function(){
-          $(this).find('.sub-menu, .post-infos').removeClass('is-fading-out');
-          $(this).find('.sub-menu, .post-infos').addClass('is-fading-in');
+      $(document).on('mouseenter', '.level-0, .m-postlist .box, .m-about', function(){
+          $(this).find('.sub-menu, .post-infos, .m-about-link').removeClass('is-fading-out');
+          $(this).find('.sub-menu, .post-infos, .m-about-link').addClass('is-fading-in');
       });
 
-      $(document).on('mouseleave', '.level-0, .m-postlist .box', function(){
-          $(this).find('.sub-menu, .post-infos').removeClass('is-fading-in');
-          $(this).find('.sub-menu, .post-infos').addClass('is-fading-out');
+      $(document).on('mouseleave', '.level-0, .m-postlist .box, .m-about', function(){
+          $(this).find('.sub-menu, .post-infos, .m-about-link').removeClass('is-fading-in');
+          $(this).find('.sub-menu, .post-infos, .m-about-link').addClass('is-fading-out');
       });
 	  
 	  

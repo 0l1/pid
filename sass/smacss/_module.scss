@@ -109,7 +109,29 @@
 
 .m-about {
 	position: relative;
-	padding-top: em(40,16);
+	padding-top: em(45,16);
+}
+
+.m-about-link {
+	position: absolute;
+	top: em(45,16);
+	left: 0;
+	width: em(236,16);
+	height: em(236,16);
+	background: rgba(255, 255, 255, 0.8);
+	border-radius: em(236,16);
+}
+
+.m-about-link:hover,
+.m-about-link:focus {
+	color: $darkgrey;
+}
+
+.m-about-title {
+	text-align: center;
+	@extend %Jennasue;
+	font-size: em(32,16);
+	line-height: em(236,32);
 }
 
 /***************/
@@ -138,7 +160,7 @@ $social: (facebook, twitter, pinterest, instagram);
 	position: absolute;
 	z-index: 5;
 	width: em(240,16);
-	height: em(240,16);
+	height: em(45,16);
 	top: em(40,16);
 	left: 0;
 	//@include animation(Spining 10s linear infinite);
@@ -411,6 +433,7 @@ $social: (facebook, twitter, pinterest, instagram);
 	font-size: em(14,16);
 	line-height: em(22,14);
 	margin-bottom: em(25,14);
+	text-align: justify;
 }
 
 .m-singlepost-content a {
