@@ -1377,6 +1377,18 @@ h4, h5, h6 {
   color: white;
 }
 
+/*****************/
+/*    Archive    */
+/*****************/
+/* line 617, ../sass/smacss/_module.scss */
+.m-archive-title {
+  color: #7d7d7d;
+  font-size: 2.5em;
+  text-align: center;
+  font-style: italic;
+  margin: 0 auto 0.625em;
+}
+
 /******************/
 /*   Displaying   */
 /******************/

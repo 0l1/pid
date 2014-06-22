@@ -8,6 +8,19 @@
     </aside>
       <?php $postcount = 0; ?>
       <div class="m-postlist">
+        <header role="heading">
+          <?php if(is_category()): ?>
+            <?php
+            $cats = get_the_category();
+            $cat_name = $cats[0]->name;
+            ?>
+            <h1 class="m-archive-title"><?php echo $cat_name; ?></h1>
+          <?php elseif(is_author()): ?>
+            <h1 class="m-archive-title"><?php the_author(); ?>'s Posts</h1>
+          <?php elseif(is_tag()): ?>
+            <h1 class="m-archive-title"><?php single_tag_title(''); ?></h1>
+          <?php endif; ?>
+        </header>
         <?php while (have_posts()) : the_post(); ?>
           <?php $postcount++; ?>
           <article class="post<?php if ( $postcount%3 == 1 ) { echo ' is-cleared'; } ?>">

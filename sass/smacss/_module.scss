@@ -609,3 +609,15 @@ $social: (facebook, twitter, pinterest, instagram);
 	background: $mustard;
 	color: $white;
 }
+
+/*****************/
+/*    Archive    */
+/*****************/
+
+.m-archive-title {
+	color: $darkgrey;
+	font-size: em(40,16);
+	text-align: center;
+	font-style: italic;
+	margin: 0 auto em(25,40);
+}
