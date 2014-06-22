@@ -73,6 +73,17 @@ function get_excerpt_by_id($post_id){
     return $the_excerpt;
 }
 
+
+// Limiter longueur de l'excerpt
+function get_excerpt($count){
+  $permalink = get_permalink($post->ID);
+  $excerpt = get_the_content();
+  $excerpt = strip_tags(strip_shortcodes($excerpt));
+  $excerpt = substr($excerpt, 0, $count);
+  $excerpt = $excerpt.'...';
+  return $excerpt;
+}
+
 /**
  * runs on post save and check's if we already have a post thumbnail, if not it gets one
  * 
@@ -231,16 +242,6 @@ function the_breadcrumb() {
     elseif (is_search()) {echo"<li>Search Results"; echo'</li>';}
     echo '</ul>';
 	echo '</nav>';
-}
-
-// Limiter longueur de l'excerpt
-function get_excerpt($count){
-  $permalink = get_permalink($post->ID);
-  $excerpt = get_the_content();
-  $excerpt = strip_tags($excerpt);
-  $excerpt = substr($excerpt, 0, $count);
-  $excerpt = $excerpt.'...';
-  return $excerpt;
 }
 
 // Enregistrement des scripts

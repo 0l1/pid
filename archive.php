@@ -29,7 +29,7 @@
               <div class="post-infos is-transparent">
                 <h1 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
                 <div class="sep"></div>
-                <a class="post-desc" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php echo get_excerpt(75); ?></a>
+                <a class="post-desc" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php echo get_excerpt(70); ?></a>
                 <a class="post-more" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">Lire</a>
 			  </div>
             </div>
