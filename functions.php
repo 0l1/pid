@@ -121,6 +121,14 @@ if ( function_exists('register_sidebar') ){
 		'before_title' => '<h2 class="m-daily-title">',
 		'after_title' => '</h2>'
 	));
+    register_sidebar(array(
+        'name'=> 'Blog Roll',
+        'id' => 'blogroll',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '',
+        'after_title' => ''
+    ));
 }
 
 // Activation menu

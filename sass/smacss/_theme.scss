@@ -15,31 +15,36 @@ a:focus {
 
 .post-img,
 .sliderthumb,
-.post-banner {
+.post-banner,
+.m-daily-object {
 	border: 10px solid transparent;
 }
 
 .m-postlist .yellow,
 .m-slider .yellow,
-.post-banner.yellow{
+.post-banner.yellow,
+.m-daily-object.yellow{
 	border: 10px solid  $yellowborder;
 }
 
 .m-postlist .green,
 .m-slider .green,
-.post-banner.green {
+.post-banner.green,
+.m-daily-object.green {
 	border: 10px solid  $greenborder;
 }
 
 .m-postlist .pink,
 .m-slider .pink,
-.post-banner.pink {
+.post-banner.pink,
+.m-daily-object.pink {
 	border: 10px solid  $pinkborder;
 }
 
 .m-postlist .grey, 
 .m-slider .grey,
-.post-banner.grey {
+.post-banner.grey,
+.m-daily-object.grey {
 	border: 10px solid  $greyborder;
 }
 

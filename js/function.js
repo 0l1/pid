@@ -29,7 +29,7 @@
       });
 	  
 	  
-	    $('.post-img, .sliderthumb, .post-banner').each(function() {
+	    $('.post-img, .sliderthumb, .post-banner, .m-daily-object').each(function() {
     		var Colors = [ 'pink', 'yellow', 'green', 'grey' ];
     		var Class = Colors[Math.floor(Math.random()*Colors.length)];
 		  

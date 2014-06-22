@@ -130,8 +130,8 @@
 .m-about-title {
 	text-align: center;
 	@extend %Jennasue;
-	font-size: em(32,16);
-	line-height: em(236,32);
+	font-size: em(35,16);
+	line-height: em(236,35);
 }
 
 /***************/
@@ -199,24 +199,59 @@ $social: (facebook, twitter, pinterest, instagram);
 
 .m-daily-object {
 	position: relative;
+	height: em(320,16);
+	margin-top: em(15,16);
 }
 
 .m-daily-title {
 	@extend %Jennasue;
-	font-size: em(32,16);
+	font-size: em(35,16);
 	margin: 0;
 	position: absolute;
-	top: em(35,32);
-	left: em(10,32);
-	width: em(220,32);
+	top: em(35,35);
+	left: 0;
+	width: em(220,35);
 	text-align: center;
-	
 }
 
-.m-daily-object img {
-	border: 10px solid $flashypink;
+.m-daily-object:hover .m-daily-title {
+	color: $darkgrey;
 }
 
+/*******************/
+/*    Blog Roll    */
+/*******************/
+
+.m-friends {
+	background: $white;
+	margin-top: em(15,16);
+	padding: em(20,16);
+}
+
+.m-friends-title {
+	@extend %Jennasue;
+	font-size: em(35,16);
+	line-height: em(35,35);
+	color: $darkgrey;
+	margin: 0;
+}
+
+.m-friends-list {
+	margin-top: em(20,16);
+}
+
+.m-friends-item {
+	line-height: em(16,16);
+	margin-bottom: em(12,16);
+}
+.m-friends-item.last {
+	margin-bottom: 0;
+}
+
+.m-friends-link {
+	font-size: em(13,16);
+	line-height: em(13,13);
+}
 
 /*********************/
 /*    Breadcrumbs    */
