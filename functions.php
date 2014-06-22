@@ -199,16 +199,18 @@ function the_breadcrumb() {
         } elseif (is_single()) {
             echo '<li>';
             the_category(' </li><li> > </li><li> ');
-            if (is_single()) {
-                echo '</li><li> > </li><li><span>';
-                the_title();
-                echo '</span></li>';
-            }
+            echo '</li><li> > </li><li><span>';
+            the_title();
+            echo '</span></li>';
         } elseif (is_author()) {
             echo'<li>'.get_the_author().'\'s Posts</li>';
         }  elseif (is_tag()) {
             echo '<li>Tag : <span>';
             single_tag_title('');
+            echo '</span></li>';
+        }   elseif (is_page()) {
+            echo '<li><span>';
+            the_title();
             echo '</span></li>';
         }
     }
