@@ -23,8 +23,25 @@
     <meta name="twitter:creator" content="@PID_blog">
     <meta name="twitter:description" content="Découvrez l'article '<?php the_title();?>' sur Princess in Disguise">
     <meta name="twitter:image:src" content="<?php echo $url; ?>">
+    <title>Princess in Disguise | <?php the_title(); ?> </title>
+    <?php $postid_excerpt = get_excerpt_by_id($post_id); ?>
+    <meta name="description" content=" <?php echo $postid_excerpt; ?>">
+    <?php elseif(is_home()): ?>
+      <title>Princess in Disguise | <?php bloginfo('description'); ?></title>
+      <meta name="description" content="<?php echo $cat_desc; ?>">
+    <?php elseif(is_category()): ?>
+      <?php $cats = get_the_category();
+      $cat_name = $cats[0]->name; 
+      $cat_desc = $cats[0]->description; ?>
+      <title>Princess in Disguise | <?php echo $cat_name; ?></title>
+      <meta name="description" content="<?php echo $cat_desc; ?>">
+    <?php elseif(is_author()): ?>
+      <title>Princess in Disguise | <?php the_author(); ?></title>
+      <meta name="description" content="<?php echo get_the_author_meta('description'); ?>">
+    <?php else: ?>
+    <title>Princess in Disguise | <?php bloginfo('description'); ?></title>
+    <meta name="description" content="<?php bloginfo('description'); ?>">
     <?php endif; ?>
-    <title><?php the_title(); ?></title>
     <?php wp_head(); ?>
 	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
   </head>

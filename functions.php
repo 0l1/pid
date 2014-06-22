@@ -57,6 +57,22 @@ function set_featured_image_on_save($post_id){
 
 add_action( 'save_post', 'auto_set_post_image' );
 
+
+// Special Excerpt
+function get_excerpt_by_id($post_id){
+    $the_post = get_post($post_id); //Gets post ID
+    $the_excerpt = $the_post->post_content; //Gets post_content to be used as a basis for the excerpt
+    $excerpt_length = 35; //Sets excerpt length by word count
+    $the_excerpt = strip_tags(strip_shortcodes($the_excerpt)); //Strips tags and images
+    $words = explode(' ', $the_excerpt, $excerpt_length + 1);
+    if(count($words) > $excerpt_length) :
+    array_pop($words);
+    array_push($words, '…');
+    $the_excerpt = implode(' ', $words);
+    endif;
+    return $the_excerpt;
+}
+
 /**
  * runs on post save and check's if we already have a post thumbnail, if not it gets one
  * 
@@ -174,7 +190,13 @@ function the_breadcrumb() {
         echo '">';
         echo 'Home';
         echo '</a></li><li> > </li>';
-        if (is_category() || is_single()) {
+        if (is_category()) {
+            $cats = get_the_category();
+            $cat_name = $cats[0]->name;
+            echo '<li>Catégorie : <span>';
+            echo $cat_name; 
+            echo'</span></li>';
+        } elseif (is_single()) {
             echo '<li>';
             the_category(' </li><li> > </li><li> ');
             if (is_single()) {
@@ -182,19 +204,13 @@ function the_breadcrumb() {
                 the_title();
                 echo '</span></li>';
             }
-        } elseif (is_page()) {
-            if($post->post_parent){
-                $anc = get_post_ancestors( $post->ID );
-                $title = get_the_title();
-                foreach ( $anc as $ancestor ) {
-                    $output = '<li><a href="'.get_permalink($ancestor).'" title="'.get_the_title($ancestor).'">'.get_the_title($ancestor).'</a></li> <li> > </li>';
-                }
-                echo $output;
-                echo '<strong title="'.$title.'"> '.$title.'</strong>';
-            } else {
-                echo '<li><strong> '.get_the_title().'</strong></li>';
-            }
-        } elseif (is_author()) {echo'<li>'.get_the_author().' Posts</li>';}
+        } elseif (is_author()) {
+            echo'<li>'.get_the_author().'\'s Posts</li>';
+        }  elseif (is_tag()) {
+            echo '<li>Tag : <span>';
+            single_tag_title('');
+            echo '</span></li>';
+        }
     }
     elseif (is_tag()) {single_tag_title();}
     elseif (is_day()) {echo"<li>Archive for "; the_time('F jS, Y'); echo'</li>';}
