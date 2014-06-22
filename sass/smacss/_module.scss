@@ -231,7 +231,7 @@ $social: (facebook, twitter, pinterest, instagram);
 .m-friends-title {
 	@extend %Jennasue;
 	font-size: em(35,16);
-	line-height: em(35,35);
+	line-height: em(50,35);
 	color: $darkgrey;
 	margin: 0;
 }
@@ -242,7 +242,7 @@ $social: (facebook, twitter, pinterest, instagram);
 
 .m-friends-item {
 	line-height: em(16,16);
-	margin-bottom: em(12,16);
+	margin-bottom: em(10,16);
 }
 .m-friends-item.last {
 	margin-bottom: 0;

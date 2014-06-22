@@ -850,7 +850,7 @@ h4, h5, h6 {
 /* line 231, ../sass/smacss/_module.scss */
 .m-friends-title {
   font-size: 2.1875em;
-  line-height: 1em;
+  line-height: 1.42857em;
   color: #7d7d7d;
   margin: 0;
 }
@@ -863,7 +863,7 @@ h4, h5, h6 {
 /* line 243, ../sass/smacss/_module.scss */
 .m-friends-item {
   line-height: 1em;
-  margin-bottom: 0.75em;
+  margin-bottom: 0.625em;
 }
 
 /* line 247, ../sass/smacss/_module.scss */

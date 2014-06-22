@@ -2,13 +2,13 @@
 <div class="l-main">
   <section class="l-content">
     <?php if (have_posts()) : ?>
-	<aside class="m-singlepost-topnav">
+	<aside class="m-singlepost-topnav" role="complementary">
 		<?php the_breadcrumb(); ?>
-		<a href="#comments" class="t-singlelink is-right"><?php comments_number( 'Aucun commentaire', '1 commentaire', '% commentaires' ); ?> </a>
+		<a href="#comments" class="t-singlelink is-right" role="link"><?php comments_number( 'Aucun commentaire', '1 commentaire', '% commentaires' ); ?> </a>
     </aside>
     
     <?php while (have_posts()) : the_post(); ?>
-          <article class="m-singlepost">
+          <article class="m-singlepost" role="article">
           <header role="heading">
 			<div class="post-banner is-hidden">
 			<?php MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'singlepage-banner', NULL,  'singlepage-banner'); ?>
@@ -20,24 +20,24 @@
             </main>
             <footer class="m-singlepost-author" role="contentinfo">
 				<?php the_author_posts_link(); ?>
-			  </footer>
+			</footer>
 			<nav role="navigation" class="m-singlepost-nav">
 				<span class="m-singlepost-previous is-left"><?php previous_post_link('&lsaquo; %link','Article précédent'); ?></span>
 				<span class="m-singlepost-next is-right"><?php next_post_link('%link &rsaquo; ','Article suivant'); ?></span>
 			</nav>
-		    <aside class="m-singlepost-cta">
-		  	  <a href="#comments" class="t-singlelink m-comment-cta"><?php comments_number( 'Aucun commentaire', '1 commentaire', '% commentaires' ); ?> </a> <span class="t-bulletsep m-comment-cta">•</span> 
-		  	  <a href="#comments" class="t-singlelink m-comment-cta">Ajouter un commentaire</a>
+		    <aside class="m-singlepost-cta" role="complementary">
+		  	  <a href="#comments" class="t-singlelink m-comment-cta" role="link"><?php comments_number( 'Aucun commentaire', '1 commentaire', '% commentaires' ); ?> </a> <span class="t-bulletsep m-comment-cta">•</span> 
+		  	  <a href="#comments" class="t-singlelink m-comment-cta" role="link">Ajouter un commentaire</a>
 		  	  <div class="m-singlepost-social is-right">
 		  	  	<a class="facebook is-left is-static" href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + location.href, 'sharer', 'width=626,height=436');
-		    return false;">Share on Facebook</a>
+		    return false;" role="link">Share on Facebook</a>
 			    <a class="twitter is-left is-static" href="https://twitter.com/intent/tweet?original_referer=<?php echo urlencode(get_permalink()); ?>&related=PID_blog&text=<?php echo urlencode(get_the_title()); ?>&url=<?php echo urlencode(get_permalink()); ?>&via=PID_blog" 
 class="twitter-share" data-via="PID_blog" data-size="large" 
-data-related="PID_blog" data-hash tags="PID">Tweet</a>
+data-related="PID_blog" data-hash tags="PID" role="link">Tweet</a>
 			  </div>
 	  	    </aside>
 
-            <aside id="comments" class="m-singlepost-comments">
+            <aside id="comments" class="m-singlepost-comments" role="complementary">
 			  	<?php $formargs = array(
 			       	
 					'comment_notes_after' => '',
@@ -69,7 +69,7 @@ data-related="PID_blog" data-hash tags="PID">Tweet</a>
 				       
 		  		<?php $comments = get_comments($commentargs);?>
 				<div class="m-comments-number"><?php comments_number( 'Aucun commentaire', '1 commentaire', '% commentaires' ); ?> </div> 
-				<ul class="m-comments-list">
+				<ul class="m-comments-list" role="navigation">
 					<?php wp_list_comments( $arg, $comments ); ?>
 				</ul>
             </aside>		
