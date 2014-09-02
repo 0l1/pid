@@ -10,11 +10,7 @@
       <main class="m-postlist">
         <header role="heading">
           <?php if(is_category()): ?>
-            <?php
-            $cats = get_the_category();
-            $cat_name = $cats[0]->name;
-            ?>
-            <h1 class="m-archive-title"><?php echo $cat_name; ?></h1>
+            <h1 class="m-archive-title"><?php single_cat_title( '', true ); ?></h1>
           <?php elseif(is_author()): ?>
             <h1 class="m-archive-title"><?php the_author(); ?>'s Posts</h1>
           <?php elseif(is_tag()): ?>

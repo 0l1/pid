@@ -213,7 +213,7 @@ function the_breadcrumb() {
             $cats = get_the_category();
             $cat_name = $cats[0]->name;
             echo '<li>Catégorie : <span>';
-            echo $cat_name; 
+            echo single_cat_title( '', true );
             echo'</span></li>';
         } elseif (is_single()) {
             echo '<li>';
