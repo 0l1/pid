@@ -140,7 +140,14 @@ if ( function_exists('register_sidebar') ){
         'before_title' => '',
         'after_title' => ''
     ));
-}
+}   register_sidebar(array(
+        'name'=> 'Search Widget',
+        'id' => 'searchwidget',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '',
+        'after_title' => ''
+    ));
 
 // Activation menu
 register_nav_menus( array(
@@ -198,6 +205,16 @@ class Customed_Walker_Nav_Menu extends Walker_Nav_Menu {
 	}
 }
 
+function SearchFilter($query) {
+    if ($query->is_search) {
+        $query->set('post_type', 'post');
+    }
+    return $query;
+}
+
+add_filter('pre_get_posts','SearchFilter');
+
+
 //Breadcrumb
 function the_breadcrumb() {
     global $post;
@@ -231,6 +248,10 @@ function the_breadcrumb() {
             echo '<li><span>';
             the_title();
             echo '</span></li>';
+        } elseif (is_search()) {
+            echo '<li><span>Recherche : "';
+            the_search_query();
+            echo '"</span></li>';
         }
     }
     elseif (is_tag()) {single_tag_title();}

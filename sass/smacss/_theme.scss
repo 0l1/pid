@@ -124,20 +124,3 @@ input[type="tel"]:focus, input[type="color"]:focus,
 textarea:focus {
     box-shadow: 0 0 5px $pinklink;
 }
-
-input[type="submit"] {
-	border: none;
-	@extend %Jennasue;
-	font-size: em(32,16);
-	line-height: em(32,32);
-	padding: 0 em(32,32);
-	border-radius: em(6,32);
-	color: $white;
-	background: $pinklink;
-	@include transition (all 0.25s ease-in);
-}
-
-input[type="submit"]:hover,
-input[type="submit"]:focus {
-	background: $darkgrey;
-}

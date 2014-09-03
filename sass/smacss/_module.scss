@@ -138,7 +138,7 @@
 /*    Social    */
 /***************/
 
-$social: (facebook, twitter, pinterest, instagram);
+$social: (facebook, twitter, pinterest, instagram, email);
 @each $network in $social {
   .#{$network} {
 	  @include icons-sprite(#{$network});
@@ -169,7 +169,8 @@ $social: (facebook, twitter, pinterest, instagram);
 .facebook,
 .twitter,
 .pinterest, 
-.instagram {
+.instagram,
+.email {
 	position: absolute;
 	display:block;
 	overflow: hidden;
@@ -185,6 +186,11 @@ $social: (facebook, twitter, pinterest, instagram);
 .twitter {
 	top: - em(28,16);
 	right: em(45,16);
+}
+
+.email {
+	top: - em(28,16);
+	left: em(45,16);
 }
 
 .pinterest,
@@ -211,7 +217,8 @@ $social: (facebook, twitter, pinterest, instagram);
 	top: em(35,35);
 	left: 0;
 	width: em(220,35);
-	text-align: center;
+	text-align: center;	
+	color: $darkgrey;
 }
 
 .m-daily-object:hover .m-daily-title {
@@ -678,4 +685,39 @@ $social: (facebook, twitter, pinterest, instagram);
 	text-align: center;
 	font-style: italic;
 	margin: 0 auto em(25,40);
+}
+
+/****************/
+/*  Searchform  */
+/****************/
+
+.m-searchform {
+	margin-bottom: em(20,16);
+}
+
+.m-searchform-title {
+	@extend %Jennasue;
+	font-size: em(35,16);
+	margin: em(20,35) 0 em(10,35);
+	text-align: center;
+	color: $darkgrey;
+}
+
+.m-searchform input[type="text"] {
+	float: left;
+	width: em(215,13);
+	border-right: none;
+}	
+
+.m-searchform-cta {
+	background-color: white;
+	padding: 0;
+	display: block;
+	border: 1px solid $pinklink;
+	border-left:none;
+	padding: 1px 0;
+    @include icons-sprite(search);
+    width: icons-sprite-width(search);
+    height: icons-sprite-height(search) + 2px;
+    text-indent: - em(9999,16);
 }
