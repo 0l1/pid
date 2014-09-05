@@ -20,7 +20,6 @@
           $custom_args = array(
             'post_type' => 'post',
             'ignore_sticky_posts' => 1,
-            'posts_per_page' => 12,
             'paged' => $paged
           );
           $custom_query = new WP_Query( $custom_args ); 
