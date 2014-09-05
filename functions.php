@@ -230,12 +230,10 @@ function the_breadcrumb() {
             $cats = get_the_category();
             $cat_name = $cats[0]->name;
             echo '<li>Catégorie : <span>';
-            echo single_cat_title( '', true );
+            echo single_cat_title('');
             echo'</span></li>';
         } elseif (is_single()) {
-            echo '<li>';
-            the_category(' </li><li> > </li><li> ');
-            echo '</li><li> > </li><li><span>';
+            echo '<li><span>';
             the_title();
             echo '</span></li>';
         } elseif (is_author()) {

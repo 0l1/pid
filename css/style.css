@@ -1516,6 +1516,48 @@ h4, h5, h6 {
   background-position: -26px -35px;
 }
 
+/****************/
+/*  Pagination  */
+/****************/
+/* line 729, ../sass/smacss/_module.scss */
+.m-pagination {
+  text-align: center;
+  font-size: 0.875em;
+  font-style: italic;
+  margin-top: 0.71429em;
+}
+
+/* line 736, ../sass/smacss/_module.scss */
+.m-pagination .page-numbers {
+  display: inline-block;
+  width: 1.42857em;
+  line-height: 1.42857em;
+  color: #7d7d7d;
+}
+/* line 742, ../sass/smacss/_module.scss */
+.m-pagination .page-numbers:hover, .m-pagination .page-numbers:focus {
+  color: #de99ab;
+  text-decoration: underline;
+}
+
+/* line 748, ../sass/smacss/_module.scss */
+.m-pagination .current {
+  background: #de99ab;
+  color: white;
+}
+/* line 752, ../sass/smacss/_module.scss */
+.m-pagination .current:hover, .m-pagination .current:focus {
+  color: white;
+  text-decoration: none;
+}
+
+/* line 759, ../sass/smacss/_module.scss */
+.m-pagination .previous,
+.m-pagination .next {
+  width: auto;
+  padding: 0 0.35714em;
+}
+
 /******************/
 /*   Displaying   */
 /******************/

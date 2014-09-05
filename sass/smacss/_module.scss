@@ -721,3 +721,42 @@ $social: (facebook, twitter, pinterest, instagram, email);
     height: icons-sprite-height(search) + 2px;
     text-indent: - em(9999,16);
 }
+
+/****************/
+/*  Pagination  */
+/****************/
+
+.m-pagination {
+	text-align: center;
+	font-size: em(14,16);
+	font-style: italic;
+	margin-top: em(10,14);
+}
+
+.m-pagination .page-numbers {
+	display: inline-block;
+	width: em(20,14);
+	line-height: em(20,14);
+	color: $darkgrey;
+	&:hover, 
+	&:focus {
+		color: $pinklink;
+		text-decoration: underline;
+	}
+}
+
+.m-pagination .current {
+	background: $pinklink;
+	color: $white;
+	&:hover, 
+	&:focus {
+		color: $white;
+		text-decoration: none;;
+	}
+}
+
+.m-pagination .previous,
+.m-pagination .next {
+	width: auto;
+	padding: 0 em(5,14);
+}

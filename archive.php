@@ -31,11 +31,21 @@
             </div>
           </article>
         <?php endwhile; ?>
-
 	  <?php else : ?>
 	  	<p>Aucun article disponnible</p>
       <?php endif; ?>
       </main>
+      <?php global $wp_query; ?>
+      <?php $big = 999999999; // need an unlikely integer ?>
+      <?php $pagination_args = array(
+        'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+        'format' => '?paged=%#%',
+        'current' => max( 1, get_query_var('paged') ),
+        'total' => $wp_query->max_num_pages
+      ); ?>
+      <nav class="m-pagination" role="navigation">
+        <?php echo paginate_links($pagination_args); ?>
+      </nav>
     </section>
     <?php get_sidebar(); ?>
   </div>
