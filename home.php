@@ -15,9 +15,18 @@
         </header>
       <?php wp_reset_query(); ?>
       <?php $postcount = 0; ?>
-	  <?php $query = new WP_Query( array( 'ignore_sticky_posts' => 1) );?>
+      <?php 
+          $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+          $custom_args = array(
+            'post_type' => 'post',
+            'ignore_sticky_posts' => 1,
+            'posts_per_page' => 12,
+            'paged' => $paged
+          );
+          $custom_query = new WP_Query( $custom_args ); 
+      ?>
       <main class="m-postlist">
-        <?php while ($query->have_posts() ) : $query->the_post(); ?>
+        <?php while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
           <?php $postcount++; ?>
           <article class="post<?php if ( $postcount%3 == 1 ) { echo ' is-cleared'; } ?>" role="article">
             <div class="box<?php if ( $postcount%3 == 2 ) { echo ' second'; } ?><?php if ( $postcount%3 == 0 ) { echo ' is-right'; } ?>">
@@ -32,17 +41,12 @@
           </article>
         <?php endwhile; ?>
       </main>
-      <?php wp_reset_query(); ?>
-      <?php global $wp_query; ?>
-      <?php $big = 999999999; // need an unlikely integer ?>
-      <?php $pagination_args = array(
-        'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-        'format' => '?paged=%#%',
-        'current' => max( 1, get_query_var('paged') ),
-        'total' => $wp_query->max_num_pages
-      ); ?>
       <nav class="m-pagination" role="navigation">
-        <?php echo paginate_links($pagination_args); ?>
+        <?php
+          if (function_exists(custom_pagination)) {
+            custom_pagination($custom_query->max_num_pages,"",$paged);
+          }
+        ?>
       </nav>
     </section>
     <?php get_sidebar(); ?>

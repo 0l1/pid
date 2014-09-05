@@ -755,7 +755,14 @@ $social: (facebook, twitter, pinterest, instagram, email);
 	}
 }
 
-.m-pagination .previous,
+.m-pagination .dots:hover,
+.m-pagination .dots:focus {
+	color: $darkgrey;
+	text-decoration: none;
+	cursor: default;
+}
+
+.m-pagination .prev,
 .m-pagination .next {
 	width: auto;
 	padding: 0 em(5,14);

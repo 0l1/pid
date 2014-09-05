@@ -1552,7 +1552,15 @@ h4, h5, h6 {
 }
 
 /* line 759, ../sass/smacss/_module.scss */
-.m-pagination .previous,
+.m-pagination .dots:hover,
+.m-pagination .dots:focus {
+  color: #7d7d7d;
+  text-decoration: none;
+  cursor: default;
+}
+
+/* line 766, ../sass/smacss/_module.scss */
+.m-pagination .prev,
 .m-pagination .next {
   width: auto;
   padding: 0 0.35714em;
