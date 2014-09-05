@@ -4,7 +4,7 @@
       <?php query_posts(array('post__in'=>get_option('sticky_posts'))); ?>
         <header class="m-slider swiper-container" role="slider">
           <div class="swiper-wrapper">
-            <?php $i = 0; while (have_posts() && $i < 4) : the_post(); ?>
+            <?php $i = 0; while (have_posts() && $i < 6) : the_post(); ?>
           		<article class="swiper-slide" role="article">
           			<h1 role="heading"><a href="<?php the_permalink(); ?>" class="logo" title="<?php the_title(); ?>" role="link"><?php the_title(); ?></a></h1>
           			<a class="sliderthumb" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" role="link"><?php the_post_thumbnail('sliderthumb'); ?></a>
