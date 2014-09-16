@@ -308,6 +308,42 @@ $social: (facebook, twitter, pinterest, instagram, email);
   color: $white;
 }
 
+.m-slider h1 a.lightfont {
+  color: $white;
+}
+
+.m-slider h1 a.darkfont {
+  color: $black;
+}
+
+.m-slider h1 a.pinkfont {
+  color: $pinklink;
+}
+
+.m-slider h1 a.greyfont {
+  color: $grey;
+}
+
+.m-slider h1 a.darkgreyfont {
+  color: $darkgrey;
+}
+
+.m-slider h1 a.pastelpinkfont {
+  color: $pastelpink;
+}
+
+.m-slider h1 a.mustardpinkfont {
+  color: $mustard;
+}
+
+.m-slider h1 a.goldenpinkfont {
+  color: $golden;
+}
+
+.m-slider h1 a.mintpinkfont {
+  color: $greenborder;
+}
+
 .sliderthumb {
 	display:block;
 	width: em(725,16);
@@ -652,6 +688,28 @@ $social: (facebook, twitter, pinterest, instagram, email);
 .m-comments-list .reply a:focus {
 	color: $darkgrey;
 }
+
+
+#submit {
+	border: none;
+	@extend %Jennasue;
+	font-size: em(32,16);
+	line-height: em(32,32);
+	padding: 0 em(32,32);
+	border-radius: em(6,32);
+	color: $white;
+	background: $pinklink;
+	@include transition (all 0.25s ease-in);
+}
+
+#submit:hover,
+#submit:focus {
+	background: $darkgrey;
+}
+
+/*****************/
+/*    Backtop    */
+/*****************/
 
 .m-backtop {
 	display: block;

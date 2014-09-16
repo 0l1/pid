@@ -53,8 +53,6 @@ function set_featured_image_on_save($post_id){
     }
 }
 
-
-
 add_action( 'save_post', 'auto_set_post_image' );
 
 
